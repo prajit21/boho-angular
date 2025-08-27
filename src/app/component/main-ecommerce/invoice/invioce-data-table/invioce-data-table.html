@@ -1,0 +1,59 @@
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td class="item">
+        <h4 class="f-w-700 p-2 mb-0">Item Description</h4>
+      </td>
+      <td class="Hours">
+        <h4 class="f-w-700 p-2 mb-0">Hours</h4>
+      </td>
+      <td class="Rate">
+        <h4 class="f-w-700 p-2 mb-0">Rate</h4>
+      </td>
+      <td class="subtotal">
+        <h4 class="f-w-700 p-2 mb-0">Sub-total</h4>
+      </td>
+    </tr>
+    @for (data of invoiceData; track data) {
+      <tr>
+        <td>
+          <label>{{ data.title }}</label>
+          <p class="m-0">{{ data.subtitle }}</p>
+        </td>
+        <td>
+          <p class="itemtext">{{ data.hours }}</p>
+        </td>
+        <td>
+          <p class="itemtext">${{ data.rate }}</p>
+        </td>
+        <td>
+          <p class="itemtext">${{ data.subtotal }}</p>
+        </td>
+      </tr>
+    }
+    <tr>
+      <td>
+        <p class="itemtext"></p>
+      </td>
+      <td>
+        <p class="m-0">HST</p>
+      </td>
+      <td>
+        <p class="m-0">13%</p>
+      </td>
+      <td>
+        <p class="m-0">$419.25</p>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="Rate">
+        <h4 class="f-w-700 mb-0 p-2">Total</h4>
+      </td>
+      <td class="payment">
+        <h4 class="f-w-700 mb-0 p-2">$3,644.25</h4>
+      </td>
+    </tr>
+  </tbody>
+</table>

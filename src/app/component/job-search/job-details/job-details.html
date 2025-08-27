@@ -1,0 +1,136 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 xl-40 box-col-4e">
+      <app-job-filter />
+    </div>
+    <div class="col-xl-9 xl-60 box-col-8">
+      <div class="card">
+        <div class="job-search">
+          <div class="card-body">
+            <div class="d-flex">
+              <img class="img-40 img-fluid m-r-20" src="assets/images/job-search/1.jpg" alt="" />
+              <div class="flex-grow-1">
+                <h4 class="f-w-700">
+                  <a href="#">Product Designer (UI/UX Designer)</a
+                  ><span class="pull-right">
+                    <button class="btn btn-primary" type="button">Apply</button></span
+                  >
+                </h4>
+                <p>
+                  Boho - United States<span
+                    ><i class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i
+                    ><i class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i
+                    ><i class="fa fa-star font-warning"></i
+                  ></span>
+                </p>
+              </div>
+            </div>
+            @for (allData of jobDetail; track allData) {
+              <div class="job-description">
+                <h4>{{ allData.title }}</h4>
+                @if (allData.liClass === true) {
+                  <ul>
+                    @for (data of allData.data; track $index) {
+                      <li>{{ data.desctiption }}</li>
+                    }
+                  </ul>
+                } @else {
+                  @for (data of allData.data; track data) {
+                    <p>{{ data.desctiption }}</p>
+                  }
+                }
+              </div>
+            }
+            <div class="job-description">
+              <button class="btn btn-primary" type="button" style="margin-right: 4px">
+                <span><i class="fa fa-check"></i></span> Save this job
+              </button>
+              <button class="btn btn-primary" type="button">
+                <span><i class="fa fa-share-alt"></i></span> Share
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-faq">
+        <h3 class="mb-0">Similar jobs</h3>
+      </div>
+      <div class="row">
+        @for (data of jobCardsData | slice: 0 : 4; track data) {
+          <div class="col-xl-6 xl-100">
+            <div class="card" [class.ribbon-vertical-left-wrapper]="data.ribbion === true">
+              @if (data.ribbion === true) {
+                <div class="ribbon ribbon-bookmark ribbon-vertical-left ribbon-secondary">
+                  <i class="icofont icofont-love"></i>
+                </div>
+              }
+              <div class="job-search">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <img class="img-40 img-fluid m-r-20" src="{{ data.image }}" alt="" />
+                    <div class="flex-grow-1">
+                      <h4>
+                        <a href="javascript:void(0)">{{ data.title }}</a>
+                        @if (data.tag === true) {
+                          <span class="badge badge-{{ data.tagColor }} pull-right">{{
+                            data.tagTitle
+                          }}</span>
+                        }
+                        @if (data.time === true) {
+                          <span class="pull-right">{{ data.timeText }}</span>
+                        }
+                      </h4>
+                      <p>
+                        {{ data.subTitle }}
+                        <span>
+                          <ngb-rating class="font-warning" [rate]="data.rating" />
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <p>{{ data.desc }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+        <div class="col-xl-12">
+          <div class="card">
+            <div class="job-search">
+              <div class="card-body">
+                <div class="d-flex">
+                  <img
+                    class="img-40 img-fluid m-r-20"
+                    src="assets/images/job-search/3.jpg"
+                    alt=""
+                  />
+                  <div class="flex-grow-1">
+                    <h4 class="f-w-700">
+                      <a href="#">Senior UX designer</a><span class="pull-right">5 days ago</span>
+                    </h4>
+                    <p>
+                      Sutherland <span>Lelystad, Netherlands </span
+                      ><span
+                        ><i class="fa fa-star font-warning"></i
+                        ><i class="fa fa-star font-warning"></i
+                        ><i class="fa fa-star font-warning"></i
+                        ><i class="fa fa-star font-warning-half-o"></i
+                        ><i class="fa fa-star font-warning-o"></i
+                      ></span>
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  Woody equal ask saw sir weeks aware decay. Entrance prospect removing we packages
+                  strictly is no smallest he. For hopes may chief get hours day rooms. Oh no turned
+                  behind polite piqued enough at. Forbade few through inquiry blushes you. Cousin no
+                  itself eldest it in dinner latter missed no.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

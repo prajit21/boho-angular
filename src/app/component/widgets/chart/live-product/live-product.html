@@ -1,0 +1,31 @@
+<div class="small-chart-widget chart-widgets-small">
+  <div class="card">
+    <div class="card-header">
+      <h3>Live Products</h3>
+    </div>
+    <div class="card-body">
+      <div class="chart-container">
+        <div class="row">
+          <div class="col-12">
+            <div id="chart-widget6">
+              <apx-chart
+                [series]="liveproductChart.series"
+                [chart]="liveproductChart.chart"
+                [plotOptions]="liveproductChart.plotOptions"
+                [stroke]="liveproductChart.stroke"
+                [fill]="liveproductChart.fill"
+                [dataLabels]="liveproductChart.dataLabels"
+                [grid]="liveproductChart.grid"
+                [colors]="liveproductChart.colors"
+                [labels]="liveproductChart.labels"
+                [markers]="liveproductChart.markers"
+                [xaxis]="liveproductChart.xaxis"
+                [yaxis]="liveproductChart.yaxis"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

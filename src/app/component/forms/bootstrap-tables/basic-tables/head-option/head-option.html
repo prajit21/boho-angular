@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Table head options</h3>
+    <span
+      >Similar to tables , use the modifier classes<code>.table-[color]</code> to make
+      <code>thead</code>appear in any color.</span
+    >
+  </div>
+  <div class="card-block row">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+      <div class="table-responsive theme-scrollbar">
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (data of headOptionData; track data) {
+              <tr>
+                <th scope="row">{{ data.id }}</th>
+                <td>{{ data.fname }}</td>
+                <td>{{ data.lname }}</td>
+                <td>{{ data.userName }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

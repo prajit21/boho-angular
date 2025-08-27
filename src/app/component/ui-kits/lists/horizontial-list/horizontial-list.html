@@ -1,0 +1,24 @@
+<div class="card height-equal">
+  <div class="card-header card-no-border pb-0">
+    <h3>Horizontal Lists</h3>
+    <p class="f-m-light mt-1">
+      Use <code>.list-group-horizontal</code>to change the layout of list group items from vertical
+      to horizontal across all breakpoints.<code>.list-group-horizontal-[sm/md/lg/xl/xxl]</code>.
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="horizontal-list-wrapper dark-list">
+      @for (allData of horizontialListData; track allData) {
+        <ul class="fw-bold list-group list-group-horizontal-sm pb-2">
+          @for (data of allData.data; track data) {
+            @if (data.border) {
+              <li class="list-group-item border-left-{{ allData.borderColor }}">{{ data.item }}</li>
+            } @else {
+              <li class="list-group-item">{{ data.item }}</li>
+            }
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="card height-equal">
+  <div class="card-header card-no-border pb-0">
+    <h3>{{ data()?.header }}</h3>
+    <p class="f-m-light mt-1" [innerHTML]="data()?.desc"></p>
+  </div>
+  <div class="card-body">
+    @for (textData of data()?.data; track textData) {
+      <div class="d-flex align-items-center mb-2 gap-2">
+        <div class="{{ textData.textClass }}">{{ textData.text }}</div>
+      </div>
+    }
+  </div>
+</div>

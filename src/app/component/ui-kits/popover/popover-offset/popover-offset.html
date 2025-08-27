@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Popover Offset</h3>
+    <p class="f-m-light mt-1">
+      Use the<code> data-bs-offset="*,*"</code> through popover offset above buttons.
+    </p>
+  </div>
+  <div class="card-body common-flex popover-wrapper">
+    <button
+      type="button"
+      class="btn btn-secondary mb-0 me-0"
+      placement="end"
+      data-bs-offset="50,0"
+      data-bs-delay-show="5000"
+      data-kt-initialized="1"
+      ngbPopover="And here's some amazing content. It's very engaging. Right?"
+      popoverTitle="Popover title"
+    >
+      Popover offset 50
+    </button>
+
+    <button
+      type="button"
+      class="example-popover btn btn-success mb-0 me-0"
+      placement="left"
+      data-bs-offset="-50,0"
+      data-bs-delay-show="5000"
+      data-kt-initialized="1"
+      ngbPopover="Popovers are opt-in for effectiveness causes, in this way you have to initialize them yourself."
+      popoverTitle="Popover On Left"
+    >
+      Popover offset -50
+    </button>
+  </div>
+</div>

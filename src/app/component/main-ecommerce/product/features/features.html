@@ -1,0 +1,188 @@
+<div class="left-filter">
+  <div class="card-body filter-cards-view animate-chk">
+    <div class="product-filter">
+      <h3 class="f-w-600 mb-2">Category</h3>
+      <div class="checkbox-animated mt-0">
+        <label class="d-block" for="edo-ani5">
+          <input
+            class="checkbox_animated"
+            id="edo-ani5"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Man Shirt
+        </label>
+        <label class="d-block" for="edo-ani6">
+          <input
+            class="checkbox_animated"
+            id="edo-ani6"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Man Jeans
+        </label>
+        <label class="d-block" for="edo-ani7">
+          <input
+            class="checkbox_animated"
+            id="edo-ani7"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Woman Top
+        </label>
+        <label class="d-block" for="edo-ani8">
+          <input
+            class="checkbox_animated"
+            id="edo-ani8"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Woman Jeans
+        </label>
+        <label class="d-block" for="edo-ani9">
+          <input
+            class="checkbox_animated"
+            id="edo-ani9"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Man T-shirt
+        </label>
+      </div>
+    </div>
+    <div class="product-filter">
+      <h3 class="f-w-600 mb-2">Brand</h3>
+      <div class="checkbox-animated mt-0">
+        <label class="d-block" for="chk-ani">
+          <input
+            class="checkbox_animated"
+            id="chk-ani"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />
+          Levi's
+        </label>
+        <label class="d-block" for="chk-ani1">
+          <input
+            class="checkbox_animated"
+            id="chk-ani1"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Diesel
+        </label>
+        <label class="d-block" for="chk-ani2">
+          <input
+            class="checkbox_animated"
+            id="chk-ani2"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Lee
+        </label>
+        <label class="d-block" for="chk-ani3">
+          <input
+            class="checkbox_animated"
+            id="chk-ani3"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Hudson
+        </label>
+        <label class="d-block" for="chk-ani4">
+          <input
+            class="checkbox_animated"
+            id="chk-ani4"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Denizen
+        </label>
+        <label class="d-block" for="chk-ani5">
+          <input
+            class="checkbox_animated"
+            id="chk-ani5"
+            type="checkbox"
+            data-original-title=""
+            title=""
+          />Spykar
+        </label>
+      </div>
+    </div>
+    <div class="product-filter slider-product">
+      <h3 class="f-w-600 mb-2">Colors</h3>
+      <div class="color-selector">
+        <ul>
+          <li class="white"></li>
+          <li class="gray"></li>
+          <li class="black"></li>
+          <li class="orange"></li>
+          <li class="green"></li>
+          <li class="pink"></li>
+          <li class="yellow"></li>
+          <li class="blue"></li>
+          <li class="red"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="product-filter pb-0">
+      <h3 class="f-w-600 mb-2">Price</h3>
+      <ngx-slider [(value)]="value" [(highValue)]="maxvalue" [options]="options" />
+      <h3 class="f-w-600 mt-4 mb-2">New Products</h3>
+    </div>
+    <div class="product-filter pb-0 new-products">
+      <div class="owl-carousel owl-theme owl-loaded owl-drag" id="testimonial">
+        <owl-carousel-o [options]="Options">
+          <ng-template carouselSlide>
+            @for (allData of Images | slice: 0 : 3; track allData) {
+              <div class="item">
+                <div class="product-box row">
+                  <div class="product-img col-md-5">
+                    <img class="img-fluid img-100" src="{{ allData.img }}" alt />
+                  </div>
+                  <div class="product-details col-md-7 text-start">
+                    <span>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning"></i>
+                    </span>
+                    <p class="mb-0">{{ allData.name }}</p>
+                    <div class="product-price">${{ allData.price }}</div>
+                  </div>
+                </div>
+              </div>
+            }
+          </ng-template>
+          <ng-template carouselSlide>
+            @for (allData of Images | slice: 3 : 6; track allData) {
+              <div class="item">
+                <div class="product-box row">
+                  <div class="product-img col-md-5">
+                    <img class="img-fluid img-100" src="{{ allData.img }}" alt />
+                  </div>
+                  <div class="product-details col-md-7 text-start">
+                    <span>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning me-1"></i>
+                      <i class="fa fa-star font-warning"></i>
+                    </span>
+                    <p class="mb-0">{{ allData.name }}</p>
+                    <div class="product-price">${{ allData.price }}</div>
+                  </div>
+                </div>
+              </div>
+            }
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+  <div class="product-filter text-center mb-4">
+    <img class="img-fluid banner-product" src="assets/images/ecommerce/banner.jpg" alt />
+  </div>
+</div>

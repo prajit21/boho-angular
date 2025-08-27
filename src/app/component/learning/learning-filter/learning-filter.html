@@ -1,0 +1,20 @@
+<div class="md-sidebar" (clickOutside)="isCollapsed = false">
+  <a class="btn btn-primary email-aside-toggle md-sidebar-toggle" (click)="openFilter()"
+    >Learning filter</a
+  >
+  <div class="md-sidebar-aside job-sidebar" [class.open]="isCollapsed">
+    <div class="default-according style-1 faq-accordion job-accordion" id="accordionoc">
+      <div class="row">
+        <div class="col-xl-12">
+          <app-find-cource />
+        </div>
+        <div class="col-xl-12">
+          <app-categories />
+        </div>
+        <div class="col-xl-12">
+          <app-upcoming-cources />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

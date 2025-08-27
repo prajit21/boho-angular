@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Pagination Sizing</h3>
+    <p class="f-m-light mt-1">
+      Use <code>[pagination-lg/pagination-md/pagination-lg]</code> for additional sizes.
+    </p>
+  </div>
+  <div class="card-body">
+    @for (data of paginationSizingData; track data) {
+      <nav class="{{ data.class }}" aria-label="Page navigation example">
+        <ul class="pagination pagination-{{ data.sizeClass }} pagination-info pagin-border-info">
+          <li class="page-item"><a class="page-link" href="javascript:void(0)">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+        </ul>
+      </nav>
+    }
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header card-no-border">
+    <div class="header-top">
+      <h3>News & Update</h3>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <ul class="news-box">
+      @for (data of News_Updates; track data) {
+        <li>
+          <div class="d-flex">
+            <div class="flex-shrink-0"><img src="assets/images/dashboard/news-1.jpg" alt="" /></div>
+            <div class="flex-grow-1">
+              <h5>{{ data.title1 }}</h5>
+              <p>{{ data.title2 }}</p>
+            </div>
+            <span>{{ data.time }}</span>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

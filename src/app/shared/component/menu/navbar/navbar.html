@@ -1,0 +1,41 @@
+<ul class="sidebar-body-menu">
+  @for (menu of menus; track $index) {
+    <li>
+      @if (menu.headTitle1 && menu.headTitle2) {
+        <div>
+          <h3 class="lan-1">{{ menu.headTitle1 | translate }}</h3>
+          <span class="lan-2">{{ menu.headTitle2 | translate }}</span>
+        </div>
+      }
+      <ul class="sidebar-body-mainmenu custom-scrollbar">
+        <div *ngTemplateOutlet="recursiveMenu; context: { $implicit: menu.items }"></div>
+        <ng-template #recursiveMenu let-menu>
+          @for (item of menu; track item) {
+            <li>
+              @if (item.type === 'extTabLink') {
+                <a href="{{ item.path }}" target="_blank"> {{ item.title | translate }} </a>
+              } @else {
+                <a [routerLink]="item.path">
+                  @if (item.icon) {
+                    <app-svg-icon [icon]="item.icon" />
+                  }
+                  {{ item.title | translate }}
+                </a>
+              }
+              @if (item.children) {
+                <span class="sub-body-arrow"><i class="fa fa-angle-right"></i></span>
+              }
+              @if (item.children) {
+                <ul class="sidebar-body-submenu custom-scrollbar">
+                  <ng-container
+                    *ngTemplateOutlet="recursiveMenu; context: { $implicit: item.children }"
+                  />
+                </ul>
+              }
+            </li>
+          }
+        </ng-template>
+      </ul>
+    </li>
+  }
+</ul>

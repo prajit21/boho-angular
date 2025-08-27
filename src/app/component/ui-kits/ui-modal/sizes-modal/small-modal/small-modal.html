@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="myLargeModalLabel">Small modal</h3>
+  <button class="btn-close" type="button" (click)="close()"></button>
+</div>
+<div class="modal-body dark-modal">
+  @for (data of smallModalData; track data) {
+    <div class="large-modal-header">
+      <app-feather-icons [icon]="'chevrons-right'" />
+      <h4 class="f-w-700">{{ data.title }}</h4>
+    </div>
+    <p class="modal-padding-space">{{ data.desc }}</p>
+  }
+</div>

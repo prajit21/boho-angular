@@ -1,0 +1,17 @@
+<div class="pricingtable">
+  <div class="pricingtable-header">
+    <h3 class="f-w-700 title">{{ data()?.title }}</h3>
+  </div>
+  <div class="price-value">
+    <span class="currency">$</span><span class="amount">{{ data()?.price }}</span
+    ><span class="duration">/mo</span>
+  </div>
+  <ul class="pricing-content">
+    @for (planDetails of data()?.planDetail; track planDetails) {
+      <li>{{ planDetails.item }}</li>
+    }
+  </ul>
+  <div class="pricingtable-signup">
+    <a class="btn btn-primary btn-lg" href="javascript:void(0)">Sign Up</a>
+  </div>
+</div>

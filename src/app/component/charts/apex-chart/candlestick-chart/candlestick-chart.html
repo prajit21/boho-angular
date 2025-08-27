@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Candlestick Chart</h3>
+  </div>
+  <div class="card-body">
+    <div id="candlestick">
+      <apx-chart
+        [chart]="candlestickChart.chart"
+        [plotOptions]="candlestickChart.plotOptions"
+        [series]="candlestickChart.series"
+        [title]="candlestickChart.title"
+        [xaxis]="candlestickChart.xaxis"
+        [yaxis]="candlestickChart.yaxis"
+        [colors]="candlestickChart.colors"
+      />
+    </div>
+  </div>
+</div>

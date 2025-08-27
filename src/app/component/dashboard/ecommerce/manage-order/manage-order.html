@@ -1,0 +1,79 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <div class="header-top">
+      <h3>Manage Order</h3>
+      <div class="card-header-right-icon">
+        <div class="transaction-search">
+          <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label"
+            >Search:</label
+          >
+          <div class="col-xs-3 col-sm-auto search-input">
+            <input id="table-complete-search" type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="dropdown" (clickOutside)="isOpen = false">
+          <button class="btn dropdown-toggle" type="button" (click)="openMenu()">Yearly</button>
+          <div class="dropdown-menu dropdown-menu-end" [class.show]="isOpen">
+            <a class="dropdown-item" href="javascript:void(0)">Today</a>
+            <a class="dropdown-item" href="javascript:void(0)">Tomorrow</a>
+            <a class="dropdown-item" href="javascript:void(0)">Yesterday </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0 manageorder">
+    <div class="table-responsive dataTables_wrapper theme-scrollbar">
+      <table class="table dataTable display" id="manage-order" style="width: 100%">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Product Id</th>
+            <th>Email Id</th>
+            <th>stock</th>
+            <th>Payment</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of ManageOrder; track data) {
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0"><img src="{{ data.img }}" alt /></div>
+                  <div class="flex-grow-1 ms-2">
+                    <a href="product-page.html">
+                      <h5>{{ data.itemname }}</h5>
+                      <span>{{ data.itemname2 }}</span>
+                    </a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p>#{{ data.product_id }}</p>
+              </td>
+              <td>
+                <h5>{{ data.email_id }}</h5>
+              </td>
+              <td>
+                <p class="hover-box">{{ data.stock }}</p>
+              </td>
+              <td>
+                <p>{{ data.payment }}</p>
+              </td>
+              <td>
+                <span class="font-primary">${{ data.amount }}</span>
+              </td>
+              <td>
+                <div class="order">
+                  <p>{{ data.status }}</p>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

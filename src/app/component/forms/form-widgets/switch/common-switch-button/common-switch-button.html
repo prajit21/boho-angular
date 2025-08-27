@@ -1,0 +1,32 @@
+<div class="card height-equal">
+  <div class="card-header card-no-border pb-0">
+    <h3>{{ data()?.title }}</h3>
+    <p class="f-m-light mt-1">
+      @if (data()?.id === 1) {
+        Use the <code>.switch-state </code>and <code>icon-state </code>through defined icons
+        switches.
+      }
+      @if (data()?.id === 2) {
+        Use the <code>.bg-*</code> class through created default switches.
+      }
+      @if (data()?.id === 3) {
+        Use the <code>.switch-outline </code>and <code>.icon-state</code> class through created
+        outline and icons.
+      }
+    </p>
+  </div>
+  <div class="card-body common-flex flex-column switch-wrapper">
+    @for (text of data()?.data; track text) {
+      <div class="d-flex">
+        <div class="{{ data()?.class }}">
+          <label class="switch mb-0">
+            <input type="checkbox" checked="" /><span
+              class="switch-state bg-{{ text.color }}"
+            ></span>
+          </label>
+        </div>
+        <label class="col-form-label m-l-10">{{ text.text }}</label>
+      </div>
+    }
+  </div>
+</div>

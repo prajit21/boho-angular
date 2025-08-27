@@ -1,0 +1,31 @@
+<div class="card">
+  @for (allData of customeProgressData; track allData) {
+    <div class="card-header card-no-border pb-0">
+      <h3>{{ allData.header }}</h3>
+      <p class="f-m-light mt-1" [innerHTML]="allData.desc"></p>
+    </div>
+    <div class="card-body">
+      <div class="progress-showcase row">
+        <div class="col">
+          @for (data of allData.data; track data) {
+            <h6 class="mb-2">{{ data.label }}</h6>
+            <div class="progress mb-4">
+              <div
+                class="progress-bar-animated progress-bar-striped text-center bg-{{
+                  data.colorClass
+                }}"
+                role="progressbar"
+                [ngStyle]="{ width: data.width }"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {{ data.width }}
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>

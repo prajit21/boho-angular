@@ -1,0 +1,71 @@
+<div class="card height-equal">
+  <div class="card-header card-no-border pb-0">
+    <h3>Vertical</h3>
+    <span>Make vertical buttons</span>
+  </div>
+  <div class="card-body btn-group-wrapper">
+    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+      <button class="btn btn-primary" type="button">Button</button>
+      <button class="btn btn-secondary" type="button">Button</button>
+      <div class="btn-group" role="group">
+        <button
+          class="btn btn-success dropdown-toggle"
+          id="btnGroupVerticalDrop1"
+          type="button"
+          (click)="openMenu()"
+        >
+          Dropdown
+        </button>
+        <div
+          class="dropdown-menu"
+          aria-labelledby="btnGroupVerticalDrop1"
+          [class.show]="open"
+          style="transform: translate(0px, 37px)"
+        >
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+      <button class="btn btn-info" type="button">Button</button>
+      <button class="btn btn-warning" type="button">Button</button>
+      <div class="btn-group" role="group">
+        <button
+          class="btn btn-danger dropdown-toggle"
+          id="btnGroupVerticalDrop2"
+          type="button"
+          (click)="openMenu1()"
+        >
+          Dropdown
+        </button>
+        <div
+          class="dropdown-menu"
+          aria-labelledby="btnGroupVerticalDrop2"
+          [class.show]="open1"
+          style="transform: translate(0px, 37px)"
+        >
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+      <div class="btn-group" role="group">
+        <button
+          class="btn btn-light dropdown-toggle"
+          id="btnGroupVerticalDrop3"
+          type="button"
+          (click)="openMenu2()"
+        >
+          Dropdown
+        </button>
+        <div
+          class="dropdown-menu"
+          aria-labelledby="btnGroupVerticalDrop3"
+          [class.show]="open2"
+          style="transform: translate(0px, 37px)"
+        >
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

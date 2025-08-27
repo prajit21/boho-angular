@@ -1,0 +1,70 @@
+<div class="md-sidebar job-sidebar" (clickOutside)="OpenFilter = false">
+  <a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)" (click)="openFilter()"
+    >file filter</a
+  >
+  <div class="md-sidebar-aside custom-scrollbar" [ngClass]="OpenFilter ? 'open' : ''">
+    <div class="file-sidebar">
+      <div class="card">
+        <div class="card-body">
+          <ul>
+            <li>
+              <div class="btn btn-primary"><app-feather-icons [icon]="'home'" />Home</div>
+            </li>
+            <li>
+              <div class="btn btn-light"><app-feather-icons [icon]="'folder'" />All</div>
+            </li>
+            <li>
+              <div class="btn btn-light"><app-feather-icons [icon]="'clock'" />Recent</div>
+            </li>
+            <li>
+              <div class="btn btn-light"><app-feather-icons [icon]="'star'" />Starred</div>
+            </li>
+            <li>
+              <div class="btn btn-light"><app-feather-icons [icon]="'alert-circle'" />Recovery</div>
+            </li>
+            <li>
+              <div class="btn btn-light"><app-feather-icons [icon]="'trash-2'" />Deleted</div>
+            </li>
+          </ul>
+          <hr />
+          <ul>
+            <li>
+              <div class="btn btn-outline-primary progress-text">
+                <app-feather-icons [icon]="'database'" />Storage
+              </div>
+              <div class="m-t-15">
+                <div class="progress sm-progress-bar mb-3">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: 25%"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <h5 class="f-w-700">25 GB of 100 GB used</h5>
+              </div>
+            </li>
+          </ul>
+          <hr />
+          <ul>
+            <li>
+              <div class="btn btn-outline-primary progress-text">
+                <app-feather-icons [icon]="'grid'" />Pricing plan
+              </div>
+            </li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="pricing-plan">
+          <h4 class="f-w-700">Trial Version</h4>
+          <h3>FREE</h3>
+          <p>100 GB Space</p>
+          <div class="btn btn-outline-primary btn-xs">Selected</div>
+          <img class="bg-img" src="assets/images/dashboard/folder.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Boho Custom Modals</h3>
+    <p class="f-m-light mt-1">Custom Modal make by Boho.</p>
+  </div>
+
+  <div class="card-body">
+    <div class="row g-3">
+      @for (data of bohoCustomModalData; track $index) {
+        <div class="col-xl-4 col-md-6 custom-alert text-center">
+          <div class="card-wrapper border rounded-3 h-100">
+            <div class="Boho-demo-img">
+              <ul class="dot-group pb-3 pt-0">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <div class="title-wrapper pb-3 modal-heading">
+                <h4 class="f-w-600 theme-name mb-0" [innerHTML]="data.title"></h4>
+                <p>{{ data.desc }}</p>
+              </div>
+              <div class="overflow-hidden">
+                <img class="img-fluid" src="{{ data.img }}" alt="social" />
+                @if (data.id === 1) {
+                  <button
+                    class="btn btn-primary mx-auto mt-3"
+                    type="button"
+                    (click)="openProfileModal(profileContent)"
+                  >
+                    Click Out
+                  </button>
+                }
+                @if (data.id === 2) {
+                  <button
+                    class="btn btn-primary mx-auto mt-3"
+                    type="button"
+                    (click)="openResultModal(resultContent)"
+                  >
+                    Click Out
+                  </button>
+                }
+                @if (data.id === 3) {
+                  <button
+                    class="btn btn-primary mx-auto mt-3"
+                    type="button"
+                    (click)="openBalancedModal(balancedContent)"
+                  >
+                    Click Out
+                  </button>
+                }
+                <ng-template #profileContent let-modal>
+                  <app-profile-modal />
+                </ng-template>
+
+                <ng-template #resultContent let-modal>
+                  <app-result-modal />
+                </ng-template>
+
+                <ng-template #balancedContent let-modal>
+                  <app-balanced-modal />
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

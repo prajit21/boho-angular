@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Responsive Tables With Light Background</h3>
+    <span>A <code>.table-responsive , .table-light</code> inside table element.</span>
+  </div>
+  <div class="card-block row">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+      <div class="table-responsive theme-scrollbar theme-scrollbar">
+        <table class="table table-light">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Task</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Assign</th>
+              <th scope="col">Date</th>
+              <th scope="col">Price</th>
+              <th scope="col">Status</th>
+              <th scope="col">Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (data of responsiveLightBgData; track data) {
+              <tr>
+                <th scope="row">{{ data.id }}</th>
+                <td>{{ data.task }}</td>
+                <td>{{ data.email }}</td>
+                <td>{{ data.phone }}</td>
+                <td>{{ data.assign }}</td>
+                <td>{{ data.date }}</td>
+                <td>${{ data.price }}</td>
+                <td class="font-{{ data.statusColor }}">{{ data.status }}</td>
+                <td>{{ data.progress }}%</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

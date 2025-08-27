@@ -1,0 +1,22 @@
+<div class="donut-chart-widget">
+  <div class="card">
+    <div class="card-header">
+      <h3>Stock Market</h3>
+    </div>
+    <div class="card-body">
+      <div id="chart-widget13">
+        <apx-chart
+          [series]="stockChart.series"
+          [plotOptions]="stockChart.plotOptions"
+          [legend]="stockChart.legend"
+          [fill]="stockChart.fill"
+          [chart]="stockChart.chart"
+          [stroke]="stockChart.stroke"
+          [xaxis]="stockChart.xaxis"
+          [grid]="stockChart.grid"
+          [responsive]="stockChart.responsive"
+        />
+      </div>
+    </div>
+  </div>
+</div>

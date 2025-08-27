@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Check Box button group</h3>
+    <span
+      >Add <code>.active</code> for active state and <code>.disabled</code> class or
+      <code>disabled="disabled"</code> attribute</span
+    >
+  </div>
+  <div class="card-body btn-group-showcase">
+    <div class="row">
+      @for (allData of checkBoxData; track allData) {
+        <div class="col-xl-6 col-sm-12">
+          <div class="btn-group btn-option">
+            @for (data of allData.child; track data) {
+              <div class="btn btn-{{ allData.color }}">
+                <div class="checkbox checkbox-{{ allData.color }}">
+                  <input id="checkbox-primary-{{ data.id }}" type="checkbox" />
+                  <label for="checkbox-primary-{{ data.id }}">{{ data.title }}</label>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

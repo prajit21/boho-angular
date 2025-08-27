@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>{{ data()?.header }}</h3>
+    <p class="f-m-light mt-1" [innerHTML]="data()?.desc"></p>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      @for (titleData of data()?.titleData; track titleData) {
+        <div class="{{ titleData.colClass }}">
+          <div class="{{ titleData.divClass }}">
+            <h4 class="mb-3">{{ titleData.title }}</h4>
+            @for (textData of titleData.data; track textData) {
+              <div class="d-flex align-items-center mb-2 gap-2">
+                @if (data()?.header === 'Styles In Borders') {
+                  @if (titleData.title === 'Text Colors') {
+                    <div class="{{ textData.textClass }}">C</div>
+                    <span>{{ textData.text }}</span>
+                  } @else {
+                    <div class="{{ textData.textClass }}"></div>
+                    <span>{{ textData.text }}</span>
+                  }
+                } @else {
+                  <div class="{{ textData.textClass }}"></div>
+                  {{ textData.text }}
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

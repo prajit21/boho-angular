@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Default calendar</h3>
+  </div>
+  <div class="card-body card-wrapper">
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="cal-date-widget">
+          <div class="cal-datepicker">
+            <div class="datepicker-here">
+              <ngb-datepicker #dp (navigate)="date = $event.next" />
+              <div class="input-group main-inline-calender"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

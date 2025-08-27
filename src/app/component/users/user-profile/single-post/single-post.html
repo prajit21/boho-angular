@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="profile-img-style">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="d-flex">
+          <img
+            class="img-thumbnail rounded-circle me-3"
+            src="{{ data.img }}"
+            alt="Generic placeholder image"
+          />
+          <div class="flex-grow-1 align-self-center">
+            <h3 class="mt-0 user-name">{{ data.name }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 align-self-center">
+        <div class="float-sm-end">
+          <small>{{ data.time }}</small>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p>{{ data.desc }}</p>
+    @if (data.post_img) {
+      <div class="img-container">
+        <div class="my-gallery" id="aniimated-thumbnials" itemscope="">
+          <figure itemprop="associatedMedia" itemscope="">
+            <a href="{{ data.post_img }}" itemprop="contentUrl" data-size="1600x950">
+              <img
+                class="img-fluid rounded"
+                src="{{ data.post_img }}"
+                itemprop="thumbnail"
+                alt="gallery"
+            /></a>
+          </figure>
+        </div>
+      </div>
+    }
+    <div class="like-comment" style="margin-top: 30px">
+      <ul class="list-inline">
+        <li class="list-inline-item border-right pe-3">
+          <label class="m-0"
+            ><a href="javascript:void(0)"><i class="fa fa-heart"></i></a>  Like</label
+          ><span class="ms-2 counter">{{ data.like }}</span>
+        </li>
+        <li class="list-inline-item ms-2">
+          <label class="m-0"
+            ><a href="javascript:void(0)"><i class="fa fa-comment"></i></a>  Comment</label
+          ><span class="ms-2 counter">{{ data.comment }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

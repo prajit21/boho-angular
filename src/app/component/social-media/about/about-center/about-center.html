@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Pepole You May Know</h3>
+      </div>
+      <div class="card-body avatar-showcase">
+        <div class="pepole-knows">
+          <ul>
+            @for (data of addFriendsData; track data) {
+              <li>
+                <app-common-add-friends [data]="data" />
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    @for (data of hobbiesAndInterestData; track data) {
+      <div class="card">
+        <div class="card-header social-header">
+          <h3>
+            {{ data.heading }}<span class="pull-right"><i data-feather="more-vertical"></i></span>
+          </h3>
+        </div>
+        <app-common-hobbies-eduction [data]="data" />
+      </div>
+    }
+  </div>
+  <div class="col-sm-12">
+    @for (data of eductionData; track data) {
+      <div class="card">
+        <div class="card-header social-header">
+          <h3>
+            {{ data.heading }}<span class="pull-right"><i data-feather="more-vertical"></i></span>
+          </h3>
+        </div>
+        <app-common-hobbies-eduction [data]="data" />
+      </div>
+    }
+  </div>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Viewed Your Profile</h3>
+      </div>
+      <div class="card-body avatar-showcase">
+        <div class="pepole-knows">
+          <ul>
+            @for (data of addFriendsData; track data) {
+              <li>
+                <app-common-add-friends [data]="data" />
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <app-activity-log />
+  </div>
+</div>

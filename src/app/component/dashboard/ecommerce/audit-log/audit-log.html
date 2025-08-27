@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <div class="header-top">
+      <h3>Audit log</h3>
+    </div>
+  </div>
+  <div class="card-body py-0">
+    <ul class="message-box custom-scrollbar">
+      @for (data of AuditLogData; track data) {
+        <li>
+          <div class="d-flex">
+            <div class="flex-shrink-0 {{ data.iconbg }}"><i class="fa {{ data.icon }}"></i></div>
+            <div class="flex-grow-1">
+              <a [routerLink]="['/tasks']">
+                <h5>{{ data.status }}</h5>
+                <p>{{ data.name }}</p>
+              </a>
+            </div>
+            <span>{{ data.time }}</span>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

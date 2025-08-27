@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    <h3>With Icons Accordion</h3>
+    <p class="f-m-light mt-1">
+      Use the <code>.accordion </code>& <code>feather icons</code> through change look icons
+      accordion.
+    </p>
+  </div>
+  <div class="card-body accordion-border" ngbAccordion>
+    @for (item of accordionWithIconData; track item) {
+      <div class="accordion dark-accordion" ngbAccordionItem>
+        <div class="accordion-item">
+          <h2 class="accordion-header" ngbAccordionHeader>
+            <button
+              class="accordion-button f-w-600 collapsed gap-2 bg-light-warning active txt-warning"
+              type="button"
+              ngbAccordionButton
+            >
+              <app-feather-icons [icon]="item.icon" [class]="'svg-wrapper'" />{{ item.title
+              }}<i class="svg-color" data-feather="chevron-down"></i>
+            </button>
+          </h2>
+          <div class="accordion-collapse collapse" ngbAccordionCollapse>
+            <div class="accordion-body" ngbAccordionBody>
+              <p [innerHTML]="item.desc"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

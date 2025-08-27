@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="col-xl-3 box-col-4e">
+    <div class="md-sidebar" (clickOutside)="open = false">
+      <a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)" (click)="openMenu()"
+        >task filter</a
+      >
+      <div class="md-sidebar-aside job-left-aside custom-scrollbar" [class.open]="open">
+        <div class="email-left-aside">
+          <div class="card">
+            <div class="card-body">
+              <div class="email-app-sidebar left-bookmark task-sidebar">
+                <div class="d-flex">
+                  <div class="media-size-email">
+                    <img class="me-3 rounded-circle" src="assets/images/user/user.png" alt="" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4 class="f-w-600">MARK JENCO</h4>
+                    <p>Markjecno&#64;gmail.com</p>
+                  </div>
+                </div>
+                <ul class="nav main-menu" role="tablist">
+                  <li class="nav-item">
+                    <button
+                      class="badge-light-primary btn-block btn-mail w-100"
+                      type="button"
+                      (click)="openAddTask()"
+                    >
+                      <i class="me-2" data-feather="check-circle"></i> New Task
+                    </button>
+                  </li>
+                  <li class="nav-item"><span class="f-w-700 main-title"> Views</span></li>
+                  @for (views of taskSidemenu; track views) {
+                    <li style="cursor: pointer">
+                      <a id="pills-created-tab" (click)="getData(views.title_id)">
+                        <span class="title"> {{ views.title }} </span>
+                      </a>
+                    </li>
+                  }
+                  <li>
+                    <hr />
+                  </li>
+                  <li>
+                    <span class="f-w-700 main-title">
+                      Tags
+                      <span class="pull-right">
+                        <a href="javascript:void(0)" (click)="openAddTag()"
+                          ><i data-feather="plus-circle"></i>
+                        </a>
+                      </span>
+                    </span>
+                  </li>
+                  @for (tags of taskTagSidemenu; track tags) {
+                    <li style="cursor: pointer">
+                      <a
+                        class="show"
+                        id="pills-notification-tab"
+                        data-bs-toggle="pill"
+                        role="tab"
+                        aria-controls="pills-notification"
+                        aria-selected="false"
+                        (click)="getTagData(tags.title_id)"
+                      >
+                        <span class="title"> {{ tags.title }}</span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-9 col-md-12 box-col-8">
+    <div class="email-right-aside bookmark-tabcontent">
+      <div class="card email-body radius-left">
+        <div class="ps-0">
+          <div class="tab-content">
+            <app-all-tasks
+              [selectedheading_id]="selectedheading_id"
+              [selectedTagId]="selectedTagId"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

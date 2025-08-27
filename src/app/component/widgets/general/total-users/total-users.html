@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card">
+      <div class="card-header card-no-border pb-0">
+        <div class="header-top">
+          <h3>Total Users</h3>
+          <div class="dropdown icon-dropdown" (clickOutside)="isOpen = false">
+            <button
+              class="btn dropdown-toggle"
+              id="userdropdown"
+              type="button"
+              (click)="openMenu()"
+            >
+              <i class="icon-more-alt"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" [class.show]="isOpen">
+              <a class="dropdown-item" href="javascript:void(0)">Weekly</a
+              ><a class="dropdown-item" href="javascript:void(0)">Monthly</a
+              ><a class="dropdown-item" href="javascript:void(0)">Yearly</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body py-lg-3">
+        <ul class="user-list">
+          @for (data of totalUserData; track data) {
+            <li>
+              <div class="user-icon {{ data.color }}">
+                <div class="user-box bg-light-{{ data.color }}">
+                  <app-feather-icons [icon]="data.icon" [class]="data.iconColor" />
+                </div>
+              </div>
+              <div>
+                <h5 class="mb-1">{{ data.text }}</h5>
+                <span class="font-{{ data.color }} d-flex align-items-center"
+                  ><i class="{{ data.tradingIcon }} icon-rotate me-1"> </i
+                  ><span class="f-w-600">{{ data.pr }}</span></span
+                >
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12">
+    <div class="card growth-wrap">
+      <div class="card-header card-no-border pb-0">
+        <div class="header-top">
+          <h3>Followers Growth</h3>
+          <div class="dropdown icon-dropdown">
+            <button class="btn dropdown-toggle" id="growthdropdown" type="button">
+              <i class="icon-more-alt"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="javascript:void(0)">Weekly</a>
+              <a class="dropdown-item" href="javascript:void(0)">Monthly</a>
+              <a class="dropdown-item" href="javascript:void(0)">Yearly</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="growth-wrapper">
+          <div id="growthchart">
+            <apx-chart
+              [series]="GrowthChart.series"
+              [chart]="GrowthChart.chart"
+              [grid]="GrowthChart.grid"
+              [stroke]="GrowthChart.stroke"
+              [xaxis]="GrowthChart.xaxis"
+              [fill]="GrowthChart.fill"
+              [yaxis]="GrowthChart.yaxis"
+              [responsive]="GrowthChart.responsive"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

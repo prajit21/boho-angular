@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Toggle Between Modals</h3>
+    <p class="f-m-light mt-1">
+      Toggle between multiple modals with some clever placement of the
+      <code>data-bs-target </code>and <code>data-bs-toggle</code> attributes.
+    </p>
+  </div>
+  <div class="card-body">
+    <button
+      class="btn btn-dark"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalCenter1"
+      (click)="openFirstModal(firstModalContent)"
+    >
+      Open first modal
+    </button>
+
+    <ng-template #firstModalContent let-modal>
+      <div class="modal-body">
+        <div class="modal-toggle-wrapper">
+          <ul class="modal-img">
+            <li><img src="assets/images/gif/whatapp.gif" alt="whatsapp" /></li>
+            <li><img src="assets/images/gif/instagram.gif" alt="instagram" /></li>
+            <li><img src="assets/images/gif/facebook.gif" alt="facebook" /></li>
+          </ul>
+          <h4>
+            Remove your complete account from your phone or tablet to sign out of the Gmail app.
+          </h4>
+          <button
+            class="btn btn-dark rounded-pill w-100 mt-4"
+            data-bs-target="#exampleModalToggle2"
+            data-bs-toggle="modal"
+            (click)="openSecondModal(secondModalContent)"
+          >
+            Connect new account
+          </button>
+          <button
+            class="btn rounded-pill w-100 dark-toggle-btn"
+            type="button"
+            data-bs-dismiss="modal"
+            (click)="modal.dismiss('')"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <ng-template #secondModalContent let-modal>
+        <div class="modal-body">
+          <div class="modal-toggle-wrapper">
+            <ul class="modal-img">
+              <li><img src="assets/images/gif/logout.gif" alt="logout" /></li>
+            </ul>
+            <h3 class="pt-3 text-center">Already leaving??</h3>
+            <p class="text-center">Are you sure want to logout this dashboard?</p>
+            <span class="d-block text-center mb-4">
+              Not a member?<a class="ms-1" href="dashboard-02.html">Register</a></span
+            >
+            <button
+              class="btn btn-dark d-flex m-auto"
+              type="button"
+              data-bs-dismiss="modal"
+              (click)="modal.dismiss('')"
+            >
+              Yes, Log out
+            </button>
+          </div>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>

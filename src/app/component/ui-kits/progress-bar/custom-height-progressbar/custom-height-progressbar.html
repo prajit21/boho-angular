@@ -1,0 +1,23 @@
+@for (allData of customHeightProgressBarData; track allData) {
+  <div class="card">
+    <div class="card-header card-no-border pb-0">
+      <h3>{{ allData.header }}</h3>
+      <p class="f-m-light mt-1" [innerHTML]="allData.desc"></p>
+    </div>
+    <div class="card-body">
+      <div class="progress-showcase row">
+        <div class="col">
+          @for (data of allData.data; track data) {
+            <div class="progress" [ngStyle]="{ height: data.height }">
+              <div
+                class="progress-bar bg-{{ data.colorClass }}"
+                role="progressbar"
+                [ngStyle]="{ width: data.width }"
+              ></div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

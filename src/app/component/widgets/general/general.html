@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 col-xl-2">
+      <app-common-currency [data]="bitcoinChart" />
+    </div>
+    <div class="col-sm-4 col-xl-2">
+      <app-common-currency [data]="ethereumChart" />
+    </div>
+    <div class="col-sm-4 col-xl-2">
+      <app-common-currency [data]="leavetravelChart" />
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <app-common-avarage-ofday [data]="averagesaleChart" />
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <app-common-avarage-ofday [data]="averageprofitChart" />
+    </div>
+    <div class="col-sm-6 col-xl-3 col-lg-6 box-col-6">
+      <app-common-product-status-chartbox [data]="purchase" />
+    </div>
+    <div class="col-sm-6 col-xl-3 col-lg-6 box-col-6">
+      <app-common-product-status-chartbox [data]="sale" />
+    </div>
+    <div class="col-sm-6 col-xl-3 col-lg-6 box-col-6">
+      <app-common-product-status-chartbox [data]="salereturn" />
+    </div>
+    <div class="col-sm-6 col-xl-3 col-lg-6 box-col-6">
+      <app-common-product-status-chartbox [data]="purchaserate" />
+    </div>
+    <div class="col-xxl-3 col-xl-4 col-md-6 box-col-6">
+      <app-courses />
+    </div>
+    <div class="col-xxl-4 col-xl-5 col-md-6 box-col-6">
+      <app-total-users />
+    </div>
+    <div class="col-xxl-5 col-xl-3 col-md-12 box-col-12">
+      <app-visitors />
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <app-common-socialmedia [data]="facebook" />
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <app-common-socialmedia [data]="twitter" />
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <app-common-socialmedia [data]="instagram" />
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <app-common-socialmedia [data]="youtube" />
+    </div>
+    <div class="col-xxl-5 col-xl-8 box-col-12">
+      <app-all-details />
+    </div>
+    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 box-col-6">
+      <app-balance />
+    </div>
+    <div class="col-xl-4 d-xxl-block d-xl-none col-md-6 col-sm-12 box-col-6">
+      <app-widget-calander />
+    </div>
+  </div>
+</div>

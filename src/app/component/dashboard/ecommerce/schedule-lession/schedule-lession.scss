@@ -1,0 +1,40 @@
+.cal-datepicker {
+  ngb-datepicker {
+    background-color: rgba(#405365, 0.2);
+  }
+}
+
+.cal-datepicker {
+  ngb-datepicker {
+    padding: 20px;
+  }
+  .ngb-dp-month {
+    width: 100%;
+    .ngb-dp-day {
+      &.ngb-dp-today {
+        border: 2px solid #405365;
+        color: #000;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    }
+    .ngb-dp-weekday {
+      font-weight: bold;
+    }
+    .ngb-dp-weekday,
+    .ngb-dp-day {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.cal-datepicker {
+  ngb-datepicker-navigation-select {
+    > .form-select {
+      + .form-select {
+        margin-left: 5px;
+      }
+    }
+  }
+}

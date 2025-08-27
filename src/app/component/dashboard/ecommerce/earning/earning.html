@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header card-no-border">
+    <div class="header-top">
+      <h3>Earning</h3>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div id="earning">
+      <apx-chart
+        [series]="earningChart.series"
+        [chart]="earningChart.chart"
+        [stroke]="earningChart.stroke"
+        [colors]="earningChart.colors"
+        [plotOptions]="earningChart.plotOptions"
+      />
+    </div>
+    <div class="earning text-center">
+      <p class="mb-0"><strong>$3563.98 </strong>(Total Expense)</p>
+      <span>Profile is 76% More than last Month</span>
+    </div>
+  </div>
+</div>

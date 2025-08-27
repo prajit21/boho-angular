@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="myLargeModalLabel">Full screen Modal</h3>
+  <button
+    class="btn-close"
+    type="button"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+    (click)="close()"
+  ></button>
+</div>
+<div class="modal-body dark-modal">
+  @for (data of modalData; track data) {
+    <div class="large-modal-header">
+      <app-feather-icons [icon]="'chevrons-right'" />
+      <h6>{{ data.title }}</h6>
+    </div>
+    <p class="modal-padding-space">{{ data.desc }}</p>
+  }
+</div>

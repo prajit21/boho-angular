@@ -1,0 +1,80 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Tooltip form validation</h3>
+    <p class="f-m-light mt-1">
+      If your form layout allows it, you can swap the
+      <code>.&#123;valid|invalid&#125;</code>-feedback classes
+      for<code>.&#123;valid|invalid&#125;</code>-tooltip classes to display validation feedback in a
+      styled tooltip. Be sure to have a parent with <code>position: relative</code> on it for
+      tooltip positioning.
+    </p>
+  </div>
+  <div class="card-body">
+    <form class="needs-validation" novalidate [ngClass]="{ 'was-validated': validate }">
+      <div class="row g-3">
+        <div class="col-md-4 position-relative">
+          <label class="form-label" for="validationTooltip01">First name</label>
+          <input
+            class="form-control"
+            id="validationCustom01"
+            type="text"
+            placeholder="Mark"
+            required=""
+            onlyAlphabets
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label" for="validationCustom02">Last name</label>
+          <input
+            class="form-control"
+            id="validationCustom02"
+            type="text"
+            placeholder="Otto"
+            required=""
+            onlyAlphabets
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="form-label" for="validationCustomUsername">Username</label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+            <input
+              class="form-control"
+              id="validationCustomUsername"
+              type="text"
+              aria-describedby="inputGroupPrepend"
+              required=""
+            />
+            <div class="invalid-tooltip">Please choose a unique and valid username.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label" for="validationCustom03">City</label>
+          <input class="form-control" id="validationCustom03" type="text" required="" />
+          <div class="invalid-tooltip">Please provide a valid city.</div>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label" for="validationCustom04">State</label>
+          <select class="form-select" id="validationCustom04" required="">
+            <option selected="" disabled="" value="">Choose...</option>
+            <option>U.S</option>
+            <option>Thailand</option>
+            <option>India</option>
+            <option>U.K</option>
+          </select>
+          <div class="invalid-tooltip">Please select a valid state.</div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label class="form-label" for="validationCustom05">Zip</label>
+          <input class="form-control" id="validationCustom05" type="text" required="" />
+          <div class="invalid-tooltip">Please provide a valid zip.</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit" (click)="submit()">Submit form</button>
+    </form>
+  </div>
+</div>

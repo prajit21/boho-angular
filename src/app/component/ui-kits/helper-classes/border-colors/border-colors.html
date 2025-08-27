@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Border Color</h3>
+    <p class="f-m-light mt-1">
+      Use the <code>.b-*/.b-t-*/.b-b-*/.b-l-*/.b-r-*</code>class for borders.
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="gradient-border">
+      @for (data of borderColorData; track data) {
+        <div class="d-flex align-items-center mb-2 gap-2">
+          <div class="helper-box b-{{ data.textClass }} border fill-wrapper"></div>
+          {{ data.text }}
+        </div>
+      }
+    </div>
+  </div>
+</div>

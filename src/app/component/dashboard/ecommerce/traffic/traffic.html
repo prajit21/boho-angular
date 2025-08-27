@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-header card-no-border">
+    <div class="header-top">
+      <h3>Traffic</h3>
+    </div>
+  </div>
+  <div class="card-body p-0">
+    <ul class="traffic-list">
+      <li>
+        <div>
+          <h5>$65.340</h5>
+          <span class="d-flex gap-1 align-items-center">
+            <div class="user-box"><i class="fa fa-sort-up"> </i></div>
+            <span class="f-w-500"> <strong>+45% </strong></span>Store Visits</span
+          >
+        </div>
+      </li>
+      <li>
+        <div>
+          <h5>$65.340</h5>
+          <span class="d-flex gap-1 align-items-center">
+            <div class="user-box down-icon"><i class="fa fa-sort-desc"> </i></div>
+            <span class="f-w-500"> <strong class="font-secondary">+45% </strong></span
+            >Visitors</span
+          >
+        </div>
+      </li>
+    </ul>
+    <div class="traffic-chart" id="traffic">
+      <apx-chart
+        [series]="TrafficChart.series"
+        [chart]="TrafficChart.chart"
+        [stroke]="TrafficChart.stroke"
+        [annotations]="TrafficChart.annotations"
+        [fill]="TrafficChart.fill"
+        [responsive]="TrafficChart.responsive"
+        [yaxis]="TrafficChart.yaxis"
+        [grid]="TrafficChart.grid"
+        [xaxis]="TrafficChart.xaxis"
+        [tooltip]="TrafficChart.tooltip"
+        [dataLabels]="TrafficChart.dataLabels"
+        [legend]="TrafficChart.legend"
+        [colors]="TrafficChart.colors"
+      />
+    </div>
+  </div>
+</div>

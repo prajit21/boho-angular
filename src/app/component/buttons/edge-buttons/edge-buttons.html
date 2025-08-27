@@ -1,0 +1,142 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      @for (allData of edgeButtonData; track allData) {
+        <div class="card">
+          <div class="card-header card-no-border pb-0">
+            <h3>{{ allData.title }}</h3>
+            <span [innerHTML]="allData.subTitle"></span>
+          </div>
+          <div class="card-body">
+            <div class="btn-showcase">
+              @if (allData.buttonText) {
+                @for (buttonData of allData.colors; track $index) {
+                  <button
+                    class="btn btn-pill btn-{{ buttonData }} {{ allData.buttonClass }}"
+                    type="button"
+                    placement="top"
+                    ngbTooltip="btn btn-pill btn-{{ buttonData }} {{ allData.buttonClass }}"
+                  >
+                    {{ allData.buttonText }}
+                  </button>
+                }
+              } @else {
+                @for (buttonData of allData.colors; track $index) {
+                  <button
+                    class="btn btn-pill btn-{{ buttonData }} {{ allData.buttonClass }}"
+                    type="button"
+                    placement="top"
+                    ngbTooltip="btn btn-pill btn-{{ buttonData }} {{ allData.buttonClass }}"
+                  >
+                    {{ buttonData | titlecase }} Button
+                  </button>
+                }
+              }
+            </div>
+          </div>
+        </div>
+      }
+      <div class="card" id="custom-state-button">
+        <div class="card-header card-no-border pb-0">
+          <h3>Custom state buttons</h3>
+          <span
+            >The <code>.btn</code> class used with <code>&lt;button&gt;</code>,
+            <code>&lt;a&gt;</code> and <code>&lt;input&gt;</code> elements.</span
+          >
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            <a
+              class="btn btn-pill btn-primary"
+              href="javascript:void(0)"
+              placement="top"
+              ngbTooltip="btn btn-pill btn-primary"
+              role="button"
+              >Link</a
+            >
+            <input
+              class="btn btn-pill btn-secondary"
+              type="button"
+              value="Input"
+              placement="top"
+              ngbTooltip="btn btn-pill btn-secondary"
+            />
+            <input
+              class="btn btn-pill btn-success"
+              type="submit"
+              value="Submit"
+              placement="top"
+              ngbTooltip="btn btn-pill btn-success"
+            />
+            <button
+              class="btn btn-pill btn-info"
+              type="submit"
+              placement="top"
+              ngbTooltip="btn btn-pill btn-info"
+            >
+              Button
+            </button>
+          </div>
+        </div>
+      </div>
+      @for (allData of edgeOutlinedButtonsData; track allData) {
+        <div class="card">
+          <div class="card-header card-no-border pb-0">
+            <h3>{{ allData.title }}</h3>
+            <span [innerHTML]="allData.subTitle"></span>
+          </div>
+          <div class="card-body">
+            <div class="btn-showcase">
+              @if (allData.buttonText) {
+                @for (buttonData of allData.colors; track buttonData) {
+                  <button
+                    class="btn btn-pill btn-outline-{{ buttonData }} {{ allData.buttonClass }}"
+                    [class.text-dark]="buttonData === 'light'"
+                    placement="top"
+                    ngbTooltip="btn btn-pill btn-outline-{{ buttonData }} {{ allData.buttonClass }}"
+                  >
+                    {{ allData.buttonText }}
+                  </button>
+                }
+              } @else {
+                @for (buttonData of allData.colors; track buttonData) {
+                  <button
+                    class="btn btn-pill btn-outline-{{ buttonData }} {{ allData.buttonClass }}"
+                    [class.text-dark]="buttonData === 'light'"
+                    placement="top"
+                    ngbTooltip="btn btn-pill btn-outline-{{ buttonData }} {{ allData.buttonClass }}"
+                  >
+                    {{ buttonData | titlecase }} Button
+                  </button>
+                }
+              }
+            </div>
+          </div>
+        </div>
+      }
+      @for (allData of edgeGradienButtonData; track allData) {
+        <div class="card">
+          <div class="card-header card-no-border pb-0">
+            <h3>{{ allData.title }}</h3>
+            <span [innerHTML]="allData.subTitle"></span>
+          </div>
+          <div class="card-body">
+            <div class="btn-showcase">
+              @for (buttonData of allData.colors; track buttonData) {
+                <button
+                  class="btn btn-pill btn-{{ buttonData }}-gradien"
+                  type="button"
+                  [class.text-dark]="buttonData === 'light'"
+                  placement="top"
+                  ngbTooltip="btn btn-pill btn-{{ buttonData }}-gradien"
+                >
+                  {{ buttonData | titlecase }} Button
+                </button>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

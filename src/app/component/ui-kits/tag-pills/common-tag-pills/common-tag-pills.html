@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>{{ data()?.header }}</h3>
+    <p class="f-m-light mt-1" [innerHTML]="data()?.desc"></p>
+  </div>
+  <div class="card-body">
+    <div class="badge-spacing">
+      <!-- For All Data -->
+      @for (textData of data()?.data; track textData) {
+        <!-- For Number Of Badge -->
+        @if (data()?.id === 3) {
+          <a class="{{ textData.class }}" href="javascript:void(0)">{{ textData.text }}</a>
+        } @else {
+          @if (data()?.id !== 5 && data()?.id !== 6) {
+            <span class="{{ textData.class }}">{{ textData.text }}</span>
+          }
+        }
+        <!-- For Icon With Badge -->
+        @if (data()?.id === 5 || data()?.id === 6) {
+          <a class="{{ textData.class }}" href="javascript:void(0)">
+            <app-feather-icons [icon]="textData.icon" />
+          </a>
+        }
+        <!-- For Other Badges -->
+      }
+    </div>
+  </div>
+</div>

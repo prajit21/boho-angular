@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Skill Status</h3>
+  </div>
+  <div class="card-body">
+    <div class="chart-container skill-chart">
+      <div id="circlechart">
+        <apx-chart
+          [chart]="skillstatusChart.chart"
+          [plotOptions]="skillstatusChart.plotOptions"
+          [series]="skillstatusChart.series"
+          [labels]="skillstatusChart.labels"
+          [legend]="skillstatusChart.legend"
+          [colors]="skillstatusChart.colors"
+          [responsive]="skillstatusChart.responsive"
+        />
+      </div>
+    </div>
+  </div>
+</div>

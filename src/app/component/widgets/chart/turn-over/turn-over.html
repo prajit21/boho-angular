@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Turn over</h3>
+  </div>
+  <div class="card-body">
+    <div class="chart-container">
+      <div class="row">
+        <div class="col-12">
+          <div id="chart-widget7">
+            <apx-chart
+              [chart]="turnoverChart.chart"
+              [dataLabels]="turnoverChart.dataLabels"
+              [stroke]="turnoverChart.stroke"
+              [xaxis]="turnoverChart.xaxis"
+              [grid]="turnoverChart.grid"
+              [fill]="turnoverChart.fill"
+              [colors]="turnoverChart.colors"
+              [series]="turnoverChart.series"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

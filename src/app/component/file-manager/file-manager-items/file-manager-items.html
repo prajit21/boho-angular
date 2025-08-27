@@ -1,0 +1,78 @@
+<div class="file-content">
+  <div class="card">
+    <div class="card-header card-no-border pb-0">
+      <div class="d-md-flex d-sm-block">
+        <form class="form-inline" action="#" method="get">
+          <div class="form-group d-flex mb-0">
+            <i class="fa fa-search"></i>
+            <input class="form-control-plaintext" type="text" placeholder="Search..." />
+          </div>
+        </form>
+        <div class="flex-grow-1 text-end">
+          <form
+            class="d-inline-flex"
+            action="#"
+            method="POST"
+            enctype="multipart/form-data"
+            name="myForm"
+          >
+            <div class="btn btn-primary"><i data-feather="plus-square"></i>Add New</div>
+            <div style="height: 0px; width: 0px; overflow: hidden">
+              <input id="upfile" type="file" />
+            </div>
+          </form>
+          <div class="btn btn-outline-primary ms-2"><i data-feather="upload"> </i>Upload</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body file-manager">
+      <h5>Quick Access</h5>
+      <ul class="quick-file d-flex flex-row">
+        @for (data of quickaccessData; track data) {
+          <li>
+            <div class="quick-box">
+              <i class="fa {{ data.icon }} font-{{ data.iconColor }}"></i>
+            </div>
+            <h6>{{ data.folderName }}</h6>
+          </li>
+        }
+      </ul>
+      <h5 class="mt-4">Folders</h5>
+      <ul class="folder">
+        @for (folder of folderData; track folder) {
+          <li class="folder-box" style="margin-right: 4px">
+            <div class="d-block">
+              <i class="f-44 fa fa-{{ folder.icon }} txt-warning"></i
+              ><i class="fa fa-ellipsis-v me-0 f-14 ellips"></i>
+              <div class="mt-3">
+                <h6>{{ folder.folderName }}</h6>
+                <p>
+                  {{ folder.fileSize
+                  }}<span class="pull-right"
+                    ><i class="fa fa-clock-o"> </i>{{ folder.filetime }}</span
+                  >
+                </p>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+      <h5 class="mt-4">Files</h5>
+      <ul class="d-flex flex-row files-content">
+        @for (files of filesData; track files) {
+          <li class="folder-box d-flex align-items-center">
+            <div class="d-flex align-items-center files-list">
+              <div class="flex-shrink-0 file-left">
+                <i class="f-22 fa {{ files.icon }} font-{{ files.iconColor }}"></i>
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <h6>{{ files.fileName }}</h6>
+                <p>{{ files.lastOpen }}, {{ files.fileSize }}</p>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

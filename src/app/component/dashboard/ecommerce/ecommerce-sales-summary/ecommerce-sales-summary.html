@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header card-no-border">
+    <div class="header-top">
+      <h3 class="m-0">Sales Summary</h3>
+    </div>
+  </div>
+  <div class="card-body pt-0 pb-0">
+    <div id="salessummary">
+      <apx-chart
+        [series]="salesChart.series"
+        [chart]="salesChart.chart"
+        [plotOptions]="salesChart.plotOptions"
+        [dataLabels]="salesChart.dataLabels"
+        [colors]="salesChart.colors"
+        [xaxis]="salesChart.xaxis"
+        [yaxis]="salesChart.yaxis"
+        [legend]="salesChart.legend"
+        [grid]="salesChart.grid"
+      />
+    </div>
+  </div>
+</div>

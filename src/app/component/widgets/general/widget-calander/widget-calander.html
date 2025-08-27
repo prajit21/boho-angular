@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <div class="header-top">
+      <h3>Schedule a lesson</h3>
+    </div>
+  </div>
+  <div class="card-body pt-0 pb-0">
+    <div class="schedule-lesson cal-date-widget">
+      <div class="cal-datepicker">
+        <div class="datepicker-here" data-language="en">
+          <ngb-datepicker #dp (navigate)="date = $event.next" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="currency-widget warning height-equal widget-currency {{ data()?.colorClass }}">
+  <div class="d-flex">
+    <div class="currency-icon-widget">
+      <svg>
+        <use attr.xlink:href="assets/svg/icon-sprite.svg#{{ data()?.icon }}"></use>
+      </svg>
+    </div>
+    <div>
+      <h6>
+        {{ data()?.coinName }} <span class="f-light">{{ data()?.tag }}</span>
+      </h6>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body d-flex">
+      <div class="currency-chart-wrap">
+        <div>
+          <apx-chart
+            [chart]="data()?.chart!"
+            [dataLabels]="data()?.dataLabels!"
+            [stroke]="data()?.stroke!"
+            [labels]="data()?.labels!"
+            [markers]="data()?.markers!"
+            [xaxis]="data()?.xaxis!"
+            [yaxis]="data()?.yaxis!"
+            [grid]="data()?.grid!"
+            [fill]="data()?.fill!"
+            [colors]="data()?.colors!"
+            [series]="data()?.series!"
+            [responsive]="data()?.responsive!"
+            [plotOptions]="data()?.plotOptions!"
+          />
+        </div>
+      </div>
+      <div class="bg-light-{{ data()?.colorClass }} text-center">
+        <h5 class="mb-sm-0">${{ data()?.price }}</h5>
+        <span class="f-12 f-w-500 font-{{ data()?.colorClass }}"
+          ><app-feather-icons [icon]="'trending-up'" [class]="'me-1'" />+{{
+            data()?.parsonage
+          }}%</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

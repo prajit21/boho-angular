@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <h3>Justify Tabs</h3>
+    <p class="mt-1 f-m-light">
+      Use the <code>.nav-link</code> with <code>.active </code>class and set content using flex
+      property.
+    </p>
+  </div>
+  <div class="card-body">
+    <div
+      class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2 pb-2 p-0"
+    >
+      <p><em class="txt-danger">Boho Profiles For New Employees:</em></p>
+      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav nav-pills nav-warning">
+        @for (allData of justifyTabData; track allData) {
+          <li [ngbNavItem]="allData.tabItemId">
+            <button ngbNavLink class="nav-link">{{ allData.title }}</button>
+            <ng-template ngbNavContent>
+              <div class="designer-details">
+                @for (data of allData.data; track data) {
+                  <div class="designer-profile">
+                    <div class="designer-wrap">
+                      <img class="designer-img" src="{{ data.img }}" alt="profile" />
+                      <div class="designer-content">
+                        <h6>{{ data.name }}</h6>
+                        <p>{{ data.contact }}</p>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </ng-template>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  </div>
+</div>

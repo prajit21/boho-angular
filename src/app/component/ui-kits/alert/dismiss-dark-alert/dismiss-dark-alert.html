@@ -1,0 +1,23 @@
+<div class="card height-equal">
+  <div class="card-header card-no-border pb-0">
+    <h3>Dismissing Dark Alerts</h3>
+    <p class="f-m-light mt-1">
+      Use the <code>.alert-dismissible</code> utility class to quickly remove the alerts.
+    </p>
+  </div>
+  <div class="card-body">
+    @if (!staticAlertClosed) {
+      <div class="alert alert-secondary dark alert-dismissible fade show" role="alert">
+        <i data-feather="heart"></i>
+        <p>Check your update! You should check in on some of those fields below.</p>
+        <button
+          class="btn-close"
+          type="button"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="closed()"
+        ></button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="card overflow-hidden">
+  <div class="card-header card-no-border">
+    <h3>Translucent Toasts</h3>
+    <p class="f-m-light mt-1">
+      Use the <code>.hide </code>class through hide toast and <code>.show </code>class through
+      visible toast and given directions.<code>[toast-*]</code>through change icons colors.
+    </p>
+  </div>
+  <div class="card-body toast-rtl bg-dark">
+    <div class="toast-container">
+      @for (data of translucentToastsData; track data) {
+        @if (data.show === true) {
+          <div class="toast show">
+            <div class="toast-header">
+              <i class="toast-icons toast-{{ data.iconColor }}" data-feather="disc"></i>
+              <strong class="me-auto">{{ data.title }}</strong>
+              <small class="text-muted d-sm-block d-none">{{ data.time }}</small>
+              <button class="btn-close" type="button" (click)="close(data.id)"></button>
+            </div>
+            <div class="toast-body toast-dark">{{ data.bodyText }}</div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>

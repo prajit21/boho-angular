@@ -1,0 +1,38 @@
+<div class="card">
+  @for (allData of multipalBarData; track allData) {
+    <div class="card-header card-no-border pb-0">
+      <h3>{{ allData.header }}</h3>
+      <p class="f-m-light mt-1" [innerHTML]="allData.desc"></p>
+    </div>
+    <div class="card-body">
+      <div class="progress-showcase row">
+        <div class="col">
+          <div class="progress">
+            @for (data of allData.data1; track data) {
+              <div
+                class="{{ allData.class }}-{{ data.colorClass }}"
+                role="progressbar"
+                [ngStyle]="{ width: data.width }"
+                aria-valuenow="30"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            }
+          </div>
+          <div class="progress">
+            @for (data of allData.data2; track data) {
+              <div
+                class="{{ allData.class }}-{{ data.colorClass }}"
+                role="progressbar"
+                [ngStyle]="{ width: data.width }"
+                aria-valuenow="15"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

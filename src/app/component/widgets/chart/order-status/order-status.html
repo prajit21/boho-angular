@@ -1,0 +1,99 @@
+<div class="card">
+  <div class="card-header">
+    <div class="header-top">
+      <h3>Order Status</h3>
+      <div class="card-header-right-icon">
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle"
+            id="dropdownMenuButton"
+            type="button"
+            data-bs-toggle="dropdown"
+          >
+            Today
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="javascript:void(0)">Today</a
+            ><a class="dropdown-item" href="javascript:void(0)">Tomorrow</a
+            ><a class="dropdown-item" href="javascript:void(0)">Yesterday</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="chart-container progress-chart">
+      <div id="progress1">
+        <apx-chart
+          [series]="packedOrderChart.series"
+          [chart]="packedOrderChart.chart"
+          [stroke]="packedOrderChart.stroke"
+          [fill]="packedOrderChart.fill"
+          [colors]="packedOrderChart.colors"
+          [yaxis]="packedOrderChart.yaxis"
+          [xaxis]="packedOrderChart.xaxis"
+          [plotOptions]="packedOrderChart.plotOptions"
+          [title]="packedOrderChart.title"
+          [subtitle]="packedOrderChart.subtitle"
+        />
+      </div>
+      <div id="progress2">
+        <apx-chart
+          [series]="dispatchedChart.series"
+          [chart]="dispatchedChart.chart"
+          [stroke]="dispatchedChart.stroke"
+          [fill]="dispatchedChart.fill"
+          [colors]="dispatchedChart.colors"
+          [yaxis]="dispatchedChart.yaxis"
+          [xaxis]="dispatchedChart.xaxis"
+          [plotOptions]="dispatchedChart.plotOptions"
+          [title]="dispatchedChart.title"
+          [subtitle]="dispatchedChart.subtitle"
+        />
+      </div>
+      <div id="progress3">
+        <apx-chart
+          [series]="reachStationChart.series"
+          [chart]="reachStationChart.chart"
+          [stroke]="reachStationChart.stroke"
+          [fill]="reachStationChart.fill"
+          [colors]="reachStationChart.colors"
+          [yaxis]="reachStationChart.yaxis"
+          [xaxis]="reachStationChart.xaxis"
+          [plotOptions]="reachStationChart.plotOptions"
+          [title]="reachStationChart.title"
+          [subtitle]="reachStationChart.subtitle"
+        />
+      </div>
+      <div id="progress4">
+        <apx-chart
+          [series]="outdeliveryChart.series"
+          [chart]="outdeliveryChart.chart"
+          [
+          [stroke]="outdeliveryChart.stroke"
+          [fill]="outdeliveryChart.fill"
+          [colors]="outdeliveryChart.colors"
+          [yaxis]="outdeliveryChart.yaxis"
+          [xaxis]="outdeliveryChart.xaxis"
+          [plotOptions]="outdeliveryChart.plotOptions"
+          [title]="outdeliveryChart.title"
+          [subtitle]="outdeliveryChart.subtitle"
+        />
+      </div>
+      <div id="progress5">
+        <apx-chart
+          [series]="deliveredChart.series"
+          [chart]="deliveredChart.chart"
+          [stroke]="deliveredChart.stroke"
+          [fill]="deliveredChart.fill"
+          [colors]="deliveredChart.colors"
+          [yaxis]="deliveredChart.yaxis"
+          [xaxis]="deliveredChart.xaxis"
+          [plotOptions]="deliveredChart.plotOptions"
+          [title]="deliveredChart.title"
+          [subtitle]="deliveredChart.subtitle"
+        />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+@for (allData of touchspinData; track allData) {
+  <div class="card">
+    <div class="card-header card-no-border pb-0">
+      <h3>{{ allData.title }}</h3>
+      <p class="f-m-light mt-1">
+        @if (allData.id === 0) {
+          Use the <code>.decrement-touchspin </code>and <code>.increment-touchspin </code>class.
+        }
+        @if (allData.id === 1) {
+          Use the <code>.decrement-touchspin </code>and <code>.increment-touchspin </code>class.
+        }
+      </p>
+    </div>
+    <div class="card-body common-flex">
+      @for (data of allData.data; track data) {
+        <div class="touchspin-wrapper">
+          <button
+            class="decrement-touchspin btn-touchspin {{ allData.class }}-{{ data.color }}"
+            style="margin-right: 4px"
+            (click)="decrement(allData.id, data.id)"
+          >
+            <i class="fa fa-minus"> </i>
+          </button>
+          <input
+            class="input-touchspin spin-outline-{{ data.color }}"
+            type="number"
+            value="{{ data.value }}"
+          />
+          <button
+            class="increment-touchspin btn-touchspin {{ allData.class }}-{{ data.color }}"
+            style="margin-left: 4px"
+            (click)="increment(allData.id, data.id)"
+          >
+            <i class="fa fa-plus"> </i>
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+}

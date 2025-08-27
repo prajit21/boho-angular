@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row"></div>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header card-no-border pb-0">
+        <h3>Become member</h3>
+      </div>
+      <div class="card-body pricing-block">
+        <div class="row">
+          @for (data of becomememberData; track data) {
+            <div class="col-lg-3 col-sm-6 box-col-3">
+              <app-common-become-member [data]="data" />
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header card-no-border pb-0">
+        <h3>Simple Pricing Card</h3>
+      </div>
+      <div class="card-body pricing-block">
+        <div class="row">
+          @for (data of simplepricingcardData; track data) {
+            <div class="col-lg-3 col-sm-6 box-col-3">
+              <app-common-simple-pricing-card [data]="data" />
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

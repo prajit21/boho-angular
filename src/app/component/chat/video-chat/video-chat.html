@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col call-chat-sidebar">
+      <app-users />
+    </div>
+    <div class="col call-chat-body">
+      <div class="card">
+        <div class="card-body p-0">
+          <div class="row chat-box">
+            <div class="col pr-xl-0 chat-right-aside">
+              <!-- chat start-->
+              <div class="chat">
+                <!-- chat-header start-->
+                <div class="chat-header clearfix">
+                  <div class="d-flex align-items-center">
+                    <img class="rounded-circle" src="assets/images/user/8.jpg" alt="" />
+                    <div class="flex-grow-1">
+                      <div class="about">
+                        <div class="name">
+                          Kori Thomas  <span class="font-primary f-12">Typing...</span>
+                        </div>
+                        <div class="status">Last Seen 3:55 PM</div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="list-inline chat-menu-icons">
+                    <li class="list-inline-item">
+                      <a href="javascript:void(0)"><i class="icon-search"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript:void(0)"><i class="icon-clip"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript:void(0)"><i class="icon-headphone-alt"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript:void(0)"><i class="icon-video-camera"></i></a>
+                    </li>
+                    <li class="list-inline-item toogle-bar">
+                      <a href="javascript:void(0)" (click)="openFilter()"
+                        ><i class="icon-menu"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- chat-header end-->
+                <!-- chat-history start-->
+                <div class="chat-history">
+                  <div class="row">
+                    <div class="col text-center pe-0 call-content">
+                      <div>
+                        <div class="total-time">
+                          <h2>36 : 56</h2>
+                        </div>
+                        <div class="call-icons">
+                          <ul class="list-inline">
+                            <li class="list-inline-item">
+                              <a href="javascript:void(0)"><i class="icon-video-camera"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                              <a href="javascript:void(0)"><i class="icon-volume"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                              <a href="javascript:void(0)"><i class="icon-user"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <button class="btn btn-danger-gradien btn-block btn-lg">END CALL</button>
+                        <div class="receiver-img">
+                          <img src="assets/images/other-images/receiver-img.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-7 ps-0 caller-img">
+                      <img class="img-fluid" src="assets/images/other-images/caller.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <!-- chat-history ends-->
+                <!-- chat end-->
+                <!-- Chat right side ends-->
+              </div>
+            </div>
+            <div class="col pl-xl-0 chat-menu" [class.show]="open">
+              <app-menu />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

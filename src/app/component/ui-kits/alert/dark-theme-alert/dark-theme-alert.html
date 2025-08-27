@@ -1,0 +1,40 @@
+@for (allData of darkThemeAlertData; track allData) {
+  <div class="card">
+    <div class="card-header card-no-border pb-0">
+      <h3>{{ allData.header }}</h3>
+      <p class="f-m-light mt-1" [innerHTML]="allData.desc"></p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xl-6">
+          @for (alertData of allData.data1; track alertData) {
+            <p class="mb-0 f-w-700">{{ alertData.title }}</p>
+            <div class="alert alert-{{ alertData.alertClass }}" role="alert">
+              <p>
+                This is a
+                <a class="alert-link {{ alertData.textClass }}" href="javascript:void(0)">{{
+                  alertData.title | lowercase
+                }}</a>
+                with an example link. Check it out.
+              </p>
+            </div>
+          }
+        </div>
+        <div class="col-xl-6">
+          @for (alertData of allData.data2; track alertData) {
+            <p class="mb-0 f-w-700">{{ alertData.title }}</p>
+            <div class="alert alert-{{ alertData.alertClass }}" role="alert">
+              <p>
+                This is a
+                <a class="alert-link {{ alertData.textClass }}" href="javascript:void(0)">{{
+                  alertData.title | lowercase
+                }}</a>
+                with an example link. Check it out.
+              </p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Inverse Table</h3>
+    <span>Use a class <code>table-inverse</code> inside table element.</span>
+  </div>
+  <div class="table-responsive theme-scrollbar">
+    <table class="table table-inverse">
+      <thead>
+        <tr class="border-bottom-light">
+          <th scope="col">Id</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Office</th>
+          <th scope="col">Position</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Join Date</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (data of inverseTableData; track data) {
+          <tr>
+            <th scope="row">{{ data.id }}</th>
+            <td>{{ data.fname }}</td>
+            <td>{{ data.lname }}</td>
+            <td>{{ data.office }}</td>
+            <td>{{ data.position }}</td>
+            <td>${{ data.salary }}</td>
+            <td>{{ data.joinDate }}</td>
+            <td>{{ data.age }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

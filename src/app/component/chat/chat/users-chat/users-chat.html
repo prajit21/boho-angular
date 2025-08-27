@@ -1,0 +1,71 @@
+<div class="chat">
+  <!-- chat-header start-->
+  <div class="chat-header clearfix">
+    <img class="rounded-circle" src="assets/images/user/8.jpg" alt="" />
+    <div class="about">
+      <div class="name">Kori Thomas  <span class="font-primary f-12">Typing...</span></div>
+      <div class="status">Last Seen 3:55 PM</div>
+    </div>
+    <ul class="list-inline float-start float-sm-end chat-menu-icons">
+      <li class="list-inline-item">
+        <a href="javascript:void(0)"><i class="icon-search"></i></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="javascript:void(0)"><i class="icon-clip"></i></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="javascript:void(0)"><i class="icon-headphone-alt"></i></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="javascript:void(0)"><i class="icon-video-camera"></i></a>
+      </li>
+      <li class="list-inline-item toogle-bar">
+        <a href="javascript:void(0)" (click)="openFilter()"><i class="icon-menu"></i></a>
+      </li>
+    </ul>
+  </div>
+  <!-- chat-header end-->
+  <div class="chat-history chat-msg-box custom-scrollbar">
+    <ul>
+      @for (data of chatData; track data) {
+        <li [class.clearfix]="data.reply">
+          <div class="message" [ngClass]="data.reply ? 'other-message pull-right' : 'my-message'">
+            <img
+              class="rounded-circle chat-user-img img-30"
+              [ngClass]="data.reply ? 'float-end' : 'float-start'"
+              src="{{ data.img }}"
+              alt=""
+            />
+            <div class="message-data" [ngClass]="data.reply ? '' : 'text-end'">
+              <span class="message-data-time">{{ data.time }}</span>
+            </div>
+            {{ data.message }}
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+  <!-- end chat-history-->
+  <div class="chat-message clearfix">
+    <div class="row">
+      <div class="col-xl-12 d-flex">
+        <div class="smiley-box bg-primary">
+          <div class="picker"><img src="assets/images/smiley.png" alt="" /></div>
+        </div>
+        <div class="input-group text-box">
+          <input
+            class="form-control input-txt-bx"
+            id="message-to-send"
+            type="text"
+            name="message-to-send"
+            placeholder="Type a message......"
+          />
+          <button class="input-group-text btn btn-primary b-r-0" type="button">SEND</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end chat-message-->
+  <!-- chat end-->
+  <!-- Chat right side ends-->
+</div>

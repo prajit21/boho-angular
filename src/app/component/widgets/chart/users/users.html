@@ -1,0 +1,27 @@
+<div class="small-chart-widget chart-widgets-small">
+  <div class="card">
+    <div class="card-header">
+      <h3>Uses</h3>
+    </div>
+    <div class="card-body">
+      <div class="chart-container">
+        <div class="row">
+          <div class="col-12">
+            <div id="chart-widget9">
+              <apx-chart
+                [chart]="userChart.chart"
+                [dataLabels]="userChart.dataLabels"
+                [series]="userChart.series"
+                [fill]="userChart.fill"
+                [colors]="userChart.colors"
+                [title]="userChart.title"
+                [xaxis]="userChart.xaxis"
+                [yaxis]="userChart.yaxis"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

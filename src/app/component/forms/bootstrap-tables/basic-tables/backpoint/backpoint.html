@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Breckpoint Specific</h3>
+    <span
+      >Use <code>.table-responsive"❴-sm|-md|-lg|-xl|-xxl❵"</code> functions like a heading for a
+      table. It helps users with screen readers to find a table and understand what it’s about and
+      decide if they want to read it.</span
+    >
+  </div>
+  <div class="card-block row">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+      <div class="table-responsive theme-scrollbar">
+        <table class="table table-responsive-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Order Id</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (data of backPointData; track data) {
+              <tr>
+                <th scope="row">{{ data.id }}</th>
+                <td>{{ data.name }}</td>
+                <td>{{ data.orderID }}</td>
+                <td>${{ data.price }}</td>
+                <td>{{ data.quantity }}</td>
+                <td>${{ data.total }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

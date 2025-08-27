@@ -1,0 +1,104 @@
+<div class="card">
+  <div class="card-header pb-0 card-no-border">
+    <div class="header-top">
+      <h3>User Information</h3>
+      <div class="card-header-right-icon">
+        <div class="transaction-search">
+          <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label"
+            >Search:</label
+          >
+          <div class="col-xs-3 col-sm-auto search-input">
+            <input id="table-complete-search" type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="dropdown" (clickOutside)="open = false">
+          <button
+            class="btn dropdown-toggle"
+            id="dropdownMenuButton"
+            type="button"
+            (click)="toggle()"
+          >
+            Yearly
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" [class.show]="open">
+            <a class="dropdown-item" href="javascript:void(0)">Today</a>
+            <a class="dropdown-item" href="javascript:void(0)">Tomorrow</a>
+            <a class="dropdown-item" href="javascript:void(0)">Yesterday </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0 userinformation">
+    <div class="table-responsive dataTables_wrapper theme-scrollbar">
+      <table class="table dataTable display" id="information" style="width: 100%">
+        <thead>
+          <tr>
+            <th>
+              <div class="form-check">
+                <input class="form-check-input" id="flexCheckDefault" type="checkbox" value="" />
+                <label class="form-check-label" for="flexCheckDefault"></label>
+              </div>
+            </th>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Status</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of userinformationData; track data) {
+            <tr>
+              <div class="form-check">
+                <input class="form-check-input" id="flexCheckDefault2" type="checkbox" value="" />
+                <label class="form-check-label" for="flexCheckDefault2"> </label>
+              </div>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="{{ data.img }}" alt />
+                  <div class="flex-grow-1 ms-2">
+                    <a [routerLink]="['/ecommerce/product-list']">
+                      <h5>{{ data.name }}</h5>
+                      <span>{{ data.country }}</span>
+                    </a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p>{{ data.email }}</p>
+              </td>
+              <td class="{{ data.statusColor }} f-w-500">{{ data.status }}</td>
+              <td>
+                <h5>{{ data.role }}</h5>
+              </td>
+              <td>
+                <div class="dropdown icon-dropdown">
+                  <button
+                    class="btn dropdown-toggle"
+                    id="userdropdown"
+                    type="button"
+                    (click)="openMenu(data.id)"
+                  >
+                    <app-feather-icons [icon]="'more-horizontal'" />
+                  </button>
+                  @if (data.id === openId) {
+                    <div class="dropdown-menu dropdown-menu-end" [class.show]="isOpen">
+                      <a class="dropdown-item" [routerLink]="['/users/users-edit']">Edit</a>
+                      <a
+                        class="dropdown-item remove"
+                        href="javascript:void(0)"
+                        (click)="deleteData(data)"
+                        >Delete</a
+                      >
+                    </div>
+                  }
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
