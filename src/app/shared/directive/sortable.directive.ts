@@ -1,10 +1,14 @@
-import { Directive, Input, input, output } from '@angular/core';
+import { Directive, HostBinding, HostListener, input, output, signal } from '@angular/core';
 
 import { sellingProduct } from '../data/data/default-dashboard/best-selling-product';
 
 export type SortColumn = keyof sellingProduct | '';
 export type SortDirection = 'asc' | 'desc' | '';
-const rotate: { [key: string]: SortDirection } = { asc: 'desc', desc: '', '': 'asc' };
+const rotate: { [key: string]: SortDirection } = {
+  asc: 'desc',
+  desc: '',
+  '': 'asc',
+};
 
 export interface SortEvent {
   column: SortColumn;
@@ -13,20 +17,33 @@ export interface SortEvent {
 
 @Directive({
   selector: 'th[sortable]',
-  host: {
-    '[class.asc]': 'direction === "asc"',
-    '[class.desc]': 'direction === "desc"',
-    '(click)': 'rotate()',
-  },
 })
 export class SortableDirective {
   readonly sortable = input<SortColumn>('');
-  @Input() direction: SortDirection = '';
+  readonly direction = input<SortDirection>('');
+
+  public currentDirection = signal<SortDirection>(this.direction());
+
+  // Output event
   readonly sort = output<SortEvent>();
 
-  rotate() {
-    this.direction = rotate[this.direction];
-    this.sort.emit({ column: this.sortable(), direction: this.direction });
+  @HostBinding('class.asc')
+  get isAsc() {
+    return this.currentDirection() === 'asc';
   }
-  constructor() {}
+
+  @HostBinding('class.desc')
+  get isDesc() {
+    return this.currentDirection() === 'desc';
+  }
+
+  // HostListener to handle clicks
+  @HostListener('click')
+  rotateColumn() {
+    this.currentDirection.set(rotate[this.currentDirection()]);
+    this.sort.emit({
+      column: this.sortable(),
+      direction: this.currentDirection(),
+    });
+  }
 }

@@ -35,7 +35,7 @@ export class DataTables {
   onSort({ column, direction }: SortEvent) {
     this.headers().forEach(header => {
       if (header.sortable() !== column) {
-        header.direction = '';
+        header.currentDirection.set('');
       }
     });
     this.service.sortColumn = column;

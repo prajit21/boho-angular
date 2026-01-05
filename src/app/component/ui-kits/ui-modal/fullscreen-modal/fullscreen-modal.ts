@@ -49,7 +49,9 @@ export class FullscreenModal {
 
   fullscreenXXLModal() {
     this.title = 'Full Screen Below xxl';
-    const modal = this.modalService.open(FullscreenCommonModal, { size: 'xxl' });
+    const modal = this.modalService.open(FullscreenCommonModal, {
+      size: 'xxl',
+    });
     modal.componentInstance.title = this.title;
   }
 }

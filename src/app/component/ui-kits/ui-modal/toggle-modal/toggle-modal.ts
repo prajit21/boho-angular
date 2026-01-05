@@ -14,7 +14,9 @@ export class ToggleModal {
   public modalRef1: NgbModalRef;
 
   openFirstModal(firstModalContent: TemplateRef<NgbModal>) {
-    this.modalRef1 = this.modalService.open(firstModalContent, { centered: true });
+    this.modalRef1 = this.modalService.open(firstModalContent, {
+      centered: true,
+    });
   }
 
   openSecondModal(secondModalContent: TemplateRef<NgbModal>) {

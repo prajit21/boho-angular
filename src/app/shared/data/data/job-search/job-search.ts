@@ -387,13 +387,17 @@ export const jobDetail = [
     title: 'Qualifications',
     liClass: true,
     data: [
-      { desctiption: 'Have shipped multiple iOS, Android, and/or web products' },
+      {
+        desctiption: 'Have shipped multiple iOS, Android, and/or web products',
+      },
       { desctiption: '5+ years UI/UX experience' },
       {
         desctiption:
           'Portfolio demonstrating mastery of native iOS, Android, and/or responsive web design principles',
       },
-      { desctiption: 'Ability to autonomously pursue elegant solutions to open-ended problems' },
+      {
+        desctiption: 'Ability to autonomously pursue elegant solutions to open-ended problems',
+      },
       { desctiption: 'Comfort with ambiguity' },
       { desctiption: 'Proven ability to create interactive prototypes' },
       {
@@ -408,8 +412,12 @@ export const jobDetail = [
         desctiption:
           'Ability to create and maintain flow charts, wire frames, prototypes, and mockups.',
       },
-      { desctiption: 'Ability to effectively work on more than one project at a time' },
-      { desctiption: 'Experience conducting user research and stakeholder interviews' },
+      {
+        desctiption: 'Ability to effectively work on more than one project at a time',
+      },
+      {
+        desctiption: 'Experience conducting user research and stakeholder interviews',
+      },
       {
         desctiption:
           'Solid grasp of standard design tools, ex: Sketch, Omnigraffle, the Adobe Suite, Zeplin, etc.',
@@ -436,7 +444,9 @@ export const jobDetail = [
     liClass: true,
     data: [
       { desctiption: 'Competitive pay' },
-      { desctiption: 'Competitive medical, dental, and vision insurance plans' },
+      {
+        desctiption: 'Competitive medical, dental, and vision insurance plans',
+      },
       { desctiption: 'Company-provided 401(k) plan' },
       { desctiption: 'Paid vacation and sick time' },
       { desctiption: 'Free snacks and beverages' },

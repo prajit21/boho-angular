@@ -87,7 +87,10 @@ export const flagIconData = [
   { abbrivation: 'gp', name: 'Guadeloupe Flag' },
   { abbrivation: 'gq', name: 'Equatorial Guinea Flag' },
   { abbrivation: 'gr', name: 'Greece Flag' },
-  { abbrivation: 'gs', name: 'South Georgia and the South Sandwich Islands Flag' },
+  {
+    abbrivation: 'gs',
+    name: 'South Georgia and the South Sandwich Islands Flag',
+  },
   { abbrivation: 'gt', name: 'Guatemala Flag' },
   { abbrivation: 'gu', name: 'Guam Flag' },
   { abbrivation: 'gw', name: 'Guinea-Bissau Flag' },
@@ -194,7 +197,10 @@ export const flagIconData = [
   { abbrivation: 'sd', name: 'Sudan Flag' },
   { abbrivation: 'se', name: 'Sweden Flag' },
   { abbrivation: 'sg', name: 'Singapore Flag' },
-  { abbrivation: 'sh', name: 'Saint Helena, Ascension and Tristan da Cunha Flag' },
+  {
+    abbrivation: 'sh',
+    name: 'Saint Helena, Ascension and Tristan da Cunha Flag',
+  },
   { abbrivation: 'si', name: 'Slovenia Flag' },
   { abbrivation: 'sj', name: 'Svalbard and Jan Mayen Flag' },
   { abbrivation: 'sk', name: 'Slovakia Flag' },

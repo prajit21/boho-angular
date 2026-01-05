@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { Calender } from './calander';
+import { Calendar } from './calander';
 
 export default [
   {
     path: '',
-    component: Calender,
+    component: Calendar,
     data: {
       title: 'Calender',
       breadcrumb: 'Calender',

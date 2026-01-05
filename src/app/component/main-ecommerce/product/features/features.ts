@@ -22,12 +22,42 @@ export class Features {
   };
 
   public Images = [
-    { id: 1, img: 'assets/images/ecommerce/01.jpg', name: 'Woman T-shirt', price: '100.00' },
-    { id: 2, img: 'assets/images/ecommerce/02.jpg', name: 'Dream Beauty Fashion', price: '150.00' },
-    { id: 3, img: 'assets/images/ecommerce/03.jpg', name: 'Wonen`s Dress', price: '200.00' },
-    { id: 1, img: 'assets/images/ecommerce/01.jpg', name: 'Fancy Shirt', price: '100.00' },
-    { id: 2, img: 'assets/images/ecommerce/02.jpg', name: 'Fancy Shirt', price: '100.00' },
-    { id: 3, img: 'assets/images/ecommerce/03.jpg', name: 'Fancy Shirt', price: '100.00' },
+    {
+      id: 1,
+      img: 'assets/images/ecommerce/01.jpg',
+      name: 'Woman T-shirt',
+      price: '100.00',
+    },
+    {
+      id: 2,
+      img: 'assets/images/ecommerce/02.jpg',
+      name: 'Dream Beauty Fashion',
+      price: '150.00',
+    },
+    {
+      id: 3,
+      img: 'assets/images/ecommerce/03.jpg',
+      name: 'Wonen`s Dress',
+      price: '200.00',
+    },
+    {
+      id: 1,
+      img: 'assets/images/ecommerce/01.jpg',
+      name: 'Fancy Shirt',
+      price: '100.00',
+    },
+    {
+      id: 2,
+      img: 'assets/images/ecommerce/02.jpg',
+      name: 'Fancy Shirt',
+      price: '100.00',
+    },
+    {
+      id: 3,
+      img: 'assets/images/ecommerce/03.jpg',
+      name: 'Fancy Shirt',
+      price: '100.00',
+    },
   ];
 
   public Options = {

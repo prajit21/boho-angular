@@ -13,7 +13,10 @@ export class Breadcrumb {
   private activatedRoute = inject(ActivatedRoute);
   private router = inject(Router);
 
-  public breadcrumbs: { parentBreadcrumb?: string | null; childBreadcrumb?: string };
+  public breadcrumbs: {
+    parentBreadcrumb?: string | null;
+    childBreadcrumb?: string;
+  };
   public title: string = '';
 
   constructor() {

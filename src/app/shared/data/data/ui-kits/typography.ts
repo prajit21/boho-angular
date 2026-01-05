@@ -27,7 +27,9 @@ export const listingTypograhyULData: listingTypograhyUL[] = [
   { data: 'A sound that cannot be heard' },
   { data: 'The study of ancient writing and scriptures' },
   { data: 'The study of rocks and soil' },
-  { data: 'creates more sophisticated capabilities for a web page to use coding language.' },
+  {
+    data: 'creates more sophisticated capabilities for a web page to use coding language.',
+  },
   {
     data: 'Maintaining contact and communicating clearly are also essential. possess abilities for a designer',
   },

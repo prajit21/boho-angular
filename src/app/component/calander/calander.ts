@@ -1,4 +1,4 @@
-import { NgSwitch, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 import { Component, TemplateRef, ViewEncapsulation, inject, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -7,73 +7,57 @@ import {
   CalendarEvent,
   CalendarEventAction,
   CalendarEventTimesChangedEvent,
+  CalendarModule,
   CalendarView,
-  CalendarCommonModule,
-  CalendarMonthModule,
-  CalendarWeekModule,
-  CalendarDayModule,
 } from 'angular-calendar';
-import { FlatpickrModule } from 'angularx-flatpickr';
-import { EventColor } from 'calendar-utils';
 import {
-  startOfDay,
-  endOfDay,
-  subDays,
   addDays,
+  addHours,
+  endOfDay,
   endOfMonth,
   isSameDay,
   isSameMonth,
-  addHours,
+  startOfDay,
+  subDays,
 } from 'date-fns';
 import { Subject } from 'rxjs';
 
-const colors: Record<string, EventColor> = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3',
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF',
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA',
-  },
-};
 @Component({
   selector: 'app-calander',
-  templateUrl: './calander.html',
-  styleUrls: ['./calander.scss'],
+  imports: [CalendarModule, FormsModule, JsonPipe],
   encapsulation: ViewEncapsulation.None,
-  imports: [
-    CalendarCommonModule,
-    NgSwitch,
-    CalendarMonthModule,
-    CalendarWeekModule,
-    CalendarDayModule,
-    FormsModule,
-    FlatpickrModule,
-    JsonPipe,
-  ],
+  templateUrl: './calander.html',
+  styleUrl: './calander.scss',
 })
-export class Calender {
-  private modal = inject(NgbModal);
-
-  readonly modalContent = viewChild.required<TemplateRef<Component>>('modalContent');
-
-  view: CalendarView = CalendarView.Month;
-
-  CalendarView = CalendarView;
-
-  viewDate: Date = new Date();
-
-  modalData!: {
+export class Calendar {
+  public readonly modalContent = viewChild.required<TemplateRef<Component>>('modalContent');
+  public view: CalendarView = CalendarView.Month;
+  public CalendarView = CalendarView;
+  public viewDate: Date = new Date();
+  public refresh = new Subject<void>();
+  public activeDayIsOpen: boolean = true;
+  public color: string;
+  public modalDetails!: {
     action: string;
     event: CalendarEvent;
   };
 
-  actions: CalendarEventAction[] = [
+  public colors = {
+    red: {
+      primary: '#54A8FB',
+      secondary: '#e8e5ff',
+    },
+    blue: {
+      primary: '#AF76F2',
+      secondary: '#f2f2f2',
+    },
+    yellow: {
+      primary: '#ffb829',
+      secondary: '#fff7e5',
+    },
+  };
+
+  public actions: CalendarEventAction[] = [
     {
       label: '<i class="fas fa-fw fa-pencil-alt"></i>',
       a11yLabel: 'Edit',
@@ -91,14 +75,12 @@ export class Calender {
     },
   ];
 
-  refresh = new Subject<void>();
-
-  events: CalendarEvent[] = [
+  public events: CalendarEvent[] = [
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
       title: 'A 3 day event',
-      color: { primary: '#ad2121', secondary: '#FAE3E3' },
+      color: { primary: '#54A8FB', secondary: '#AF76F2' },
       actions: this.actions,
       allDay: true,
       resizable: {
@@ -110,21 +92,21 @@ export class Calender {
     {
       start: startOfDay(new Date()),
       title: 'An event with no end date',
-      color: { ...colors['yellow'] },
+      color: { ...this.colors['yellow'] },
       actions: this.actions,
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
       title: 'A long event that spans 2 months',
-      color: { ...colors['blue'] },
+      color: { ...this.colors['blue'] },
       allDay: true,
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: addHours(new Date(), 2),
       title: 'A draggable and resizable event',
-      color: { ...colors['yellow'] },
+      color: { ...this.colors['yellow'] },
       actions: this.actions,
       resizable: {
         beforeStart: true,
@@ -134,8 +116,7 @@ export class Calender {
     },
   ];
 
-  activeDayIsOpen: boolean = true;
-  color: string;
+  private modal = inject(NgbModal);
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -166,8 +147,11 @@ export class Calender {
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent(), { size: 'lg' });
+    this.modalDetails = { event, action };
+    this.modal.open(this.modalContent(), {
+      size: 'lg',
+      modalDialogClass: 'calendar-event',
+    });
   }
 
   addEvent(): void {
@@ -177,7 +161,7 @@ export class Calender {
         title: 'New event',
         start: startOfDay(new Date()),
         end: endOfDay(new Date()),
-        color: colors['red'],
+        color: this.colors['red'],
         draggable: true,
         resizable: {
           beforeStart: true,

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { Singlepost } from '../../../../shared/data/data/users/post-data';
 
@@ -9,5 +9,5 @@ import { Singlepost } from '../../../../shared/data/data/users/post-data';
   imports: [],
 })
 export class SinglePost {
-  @Input() data: Singlepost;
+  readonly data = input<Singlepost>();
 }

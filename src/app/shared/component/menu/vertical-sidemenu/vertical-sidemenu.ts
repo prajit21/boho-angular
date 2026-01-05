@@ -31,8 +31,8 @@ export class VerticalSidemenu {
     this.screenHeight = window.innerHeight;
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
+  @HostListener('window:resize')
+  onResize(): void {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
   }
