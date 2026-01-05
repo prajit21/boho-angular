@@ -16,7 +16,7 @@
     <li
       class="color-layout active"
       data-attr="light-only"
-      [ngClass]="{ active: MIXLayout === 'default' }"
+      [class.active]="MIXLayout === 'default'"
       (click)="customizeMixLayout('default')"
     >
       <div class="header bg-light">
@@ -36,7 +36,7 @@
     <li
       class="color-layout"
       data-attr="dark-sidebar"
-      [ngClass]="{ active: MIXLayout === 'dark-sidebar' }"
+      [class.active]="MIXLayout === 'dark-sidebar'"
       (click)="customizeMixLayout('dark-sidebar')"
     >
       <div class="header bg-light">
@@ -56,7 +56,7 @@
     <li
       class="color-layout"
       data-attr="dark-only"
-      [ngClass]="{ active: MIXLayout === 'dark-only' }"
+      [class.active]="MIXLayout === 'dark-only'"
       (click)="customizeMixLayout('dark-only')"
     >
       <div class="header bg-dark">

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -27,7 +27,7 @@ const Months = [
   selector: 'app-to-do',
   templateUrl: './to-do.html',
   styleUrls: ['./to-do.scss'],
-  imports: [ToDoFilter, FormsModule, RouterLink, CommonModule],
+  imports: [ToDoFilter, FormsModule, RouterLink, NgClass],
 })
 export class ToDo {
   private toastr = inject(ToastrService);

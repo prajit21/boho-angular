@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { FeatherIcons } from '../../../shared/component/feather-icons/feather-icons';
@@ -8,7 +8,7 @@ import { ClickOutsideDirective } from '../../../shared/directive/outside.directi
   selector: 'app-file-manager-sidebar',
   templateUrl: './file-manager-sidebar.html',
   styleUrls: ['./file-manager-sidebar.scss'],
-  imports: [FeatherIcons, CommonModule, ClickOutsideDirective],
+  imports: [FeatherIcons, ClickOutsideDirective, NgClass],
 })
 export class FileManagerSidebar {
   OpenFilter: boolean = false;

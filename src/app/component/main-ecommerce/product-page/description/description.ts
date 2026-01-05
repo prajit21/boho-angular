@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-description',
   templateUrl: './description.html',
   styleUrls: ['./description.scss'],
-  imports: [CommonModule],
+  imports: [NgClass],
 })
 export class Description {
   public openTab: string = 'febric';

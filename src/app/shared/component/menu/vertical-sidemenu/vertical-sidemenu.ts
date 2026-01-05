@@ -1,4 +1,4 @@
-import { CommonModule, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet, NgClass } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { SvgIcon } from '../../svg-icon/svg-icon';
   selector: 'app-vertical-sidemenu',
   templateUrl: './vertical-sidemenu.html',
   styleUrls: ['./vertical-sidemenu.scss'],
-  imports: [RouterLink, SvgIcon, NgTemplateOutlet, TranslateModule, CommonModule],
+  imports: [RouterLink, SvgIcon, NgTemplateOutlet, TranslateModule, NgClass, NgTemplateOutlet],
 })
 export class VerticalSidemenu {
   navService = inject(VerticalNavService);

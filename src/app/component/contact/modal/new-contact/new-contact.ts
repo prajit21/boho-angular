@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
   FormControl,
@@ -24,7 +23,7 @@ export interface AddContactForm {
   selector: 'app-new-contact',
   templateUrl: './new-contact.html',
   styleUrls: ['./new-contact.scss'],
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule],
 })
 export class NewContact {
   activeModal = inject(NgbActiveModal);

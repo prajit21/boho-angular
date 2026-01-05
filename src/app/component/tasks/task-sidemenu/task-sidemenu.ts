@@ -20,8 +20,8 @@ export class TaskSidemenu {
   public taskSidemenu = Data.TaskData;
   public taskTagSidemenu = Data.TagData;
 
-  @Output() selectedheading_id: number;
-  @Output() selectedTagId: number;
+  selectedheading_id: number;
+  selectedTagId: number;
 
   public open: boolean = false;
 

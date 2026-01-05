@@ -7,7 +7,7 @@
     class="form-bookmark needs-validation"
     id="bookmark-form"
     novalidate
-    [ngClass]="{ 'was-validated': validate }"
+    [class.was-validated]="validate"
     [formGroup]="myForm"
     (submit)="add()"
   >

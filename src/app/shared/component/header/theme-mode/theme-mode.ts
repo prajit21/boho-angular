@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 
 import { LayoutService } from '../../../../shared/services/layout.service';
@@ -7,7 +7,7 @@ import { LayoutService } from '../../../../shared/services/layout.service';
   selector: 'app-theme-mode',
   templateUrl: './theme-mode.html',
   styleUrls: ['./theme-mode.scss'],
-  imports: [CommonModule],
+  imports: [NgClass],
 })
 export class ThemeMode {
   layout = inject(LayoutService);

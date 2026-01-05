@@ -10,7 +10,7 @@
     </p>
   </div>
   <div class="card-body">
-    <form class="needs-validation" novalidate [ngClass]="{ 'was-validated': validate }">
+    <form class="needs-validation" novalidate [class.was-validated]="validate">
       <div class="row g-3">
         <div class="col-md-4 position-relative">
           <label class="form-label" for="validationTooltip01">First name</label>

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { SlicePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 
 import { Gallery, GalleryItem, ImageItem, ImageSize, ThumbnailsPosition } from 'ng-gallery';
@@ -10,7 +10,7 @@ import { galleryGridData } from '../../../shared/data/data/gallery/gallery-grid'
   selector: 'app-gallery-grid-desc',
   templateUrl: './gallery-grid-desc.html',
   styleUrls: ['./gallery-grid-desc.scss'],
-  imports: [GallerizeDirective, CommonModule],
+  imports: [GallerizeDirective, SlicePipe],
 })
 export class GalleryGridDesc {
   gallery = inject(Gallery);

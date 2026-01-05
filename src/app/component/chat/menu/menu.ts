@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 import * as Data from '../../../shared/data/data/chat/call';
@@ -7,7 +7,7 @@ import * as Data from '../../../shared/data/data/chat/call';
   selector: 'app-menu',
   templateUrl: './menu.html',
   styleUrls: ['./menu.scss'],
-  imports: [CommonModule],
+  imports: [NgClass],
 })
 export class Menu {
   public callData = Data.CallData;

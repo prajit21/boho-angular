@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { basicProgressBarData } from '../../../../shared/data/data/ui-kits/progress-bar';
@@ -7,7 +6,6 @@ import { basicProgressBarData } from '../../../../shared/data/data/ui-kits/progr
   selector: 'app-simple-progressbar',
   templateUrl: './simple-progressbar.html',
   styleUrls: ['./simple-progressbar.scss'],
-  imports: [CommonModule],
 })
 export class SimpleProgressbar {
   public basicProgressBarData = basicProgressBarData;

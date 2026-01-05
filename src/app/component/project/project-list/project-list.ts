@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -9,7 +9,7 @@ import * as Data from '../../../shared/data/data/project/project-list';
   selector: 'app-project-list',
   templateUrl: './project-list.html',
   styleUrls: ['./project-list.scss'],
-  imports: [FeatherIcons, RouterLink, CommonModule],
+  imports: [FeatherIcons, RouterLink, NgClass],
 })
 export class ProjectList {
   active = 1;

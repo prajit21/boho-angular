@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, OnInit, Output, SimpleChanges, inject, input, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +15,7 @@ import * as Data from '../../../shared/data/data/contacts/all-contact';
   selector: 'app-details',
   templateUrl: './details.html',
   styleUrls: ['./details.scss'],
-  imports: [FormsModule, CommonModule, General, PersonalDetails, AddressDetails, Print],
+  imports: [FormsModule, General, PersonalDetails, AddressDetails, Print, NgClass],
 })
 export class Details implements OnInit {
   private modalService = inject(NgbModal);

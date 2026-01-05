@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { All } from './all/all';
@@ -12,7 +12,7 @@ import { Videos } from './videos/videos';
   selector: 'app-search-result',
   templateUrl: './search-result.html',
   styleUrls: ['./search-result.scss'],
-  imports: [All, Images, Videos, Audios, Settings, Tools, CommonModule],
+  imports: [All, Images, Videos, Audios, Settings, Tools, NgClass],
 })
 export class SearchResult {
   public openTab: string = 'All';

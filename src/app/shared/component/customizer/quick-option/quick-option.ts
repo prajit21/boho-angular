@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 
 import { LayoutService } from '../../../../shared/services/layout.service';
@@ -7,7 +6,6 @@ import { LayoutService } from '../../../../shared/services/layout.service';
   selector: 'app-quick-option',
   templateUrl: './quick-option.html',
   styleUrls: ['./quick-option.scss'],
-  imports: [CommonModule],
 })
 export class QuickOption {
   layout = inject(LayoutService);

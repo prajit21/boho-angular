@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -6,7 +5,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-tooltip-form',
   templateUrl: './tooltip-form.html',
   styleUrls: ['./tooltip-form.scss'],
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule],
 })
 export class TooltipForm {
   public validate = false;

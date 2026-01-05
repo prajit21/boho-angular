@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, SimpleChanges, input, viewChild } from '@angular/core';
 
 import { FeatherIcons } from '../../../shared/component/feather-icons/feather-icons';
@@ -14,7 +14,7 @@ import { EditBookmark } from '../modal/edit-bookmark/edit-bookmark';
   selector: 'app-all-bookmark',
   templateUrl: './all-bookmark.html',
   styleUrls: ['./all-bookmark.scss'],
-  imports: [FeatherIcons, EditBookmark, CommonModule],
+  imports: [FeatherIcons, EditBookmark, NgClass],
 })
 export class AllBookmark {
   readonly selectedheading_id = input<number>();

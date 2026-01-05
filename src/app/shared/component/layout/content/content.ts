@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 
@@ -23,10 +23,10 @@ import { VerticalSidemenu } from '../../menu/vertical-sidemenu/vertical-sidemenu
     Navbar,
     VerticalSidemenu,
     Breadcrumb,
-    CommonModule,
     RouterOutlet,
     Footer,
     Customizer,
+    NgClass,
   ],
 })
 export class Content implements OnInit {

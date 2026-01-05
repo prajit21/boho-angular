@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, inject, TemplateRef } from '@angular/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +11,7 @@ import { Config, LayoutService } from '../../services/layout.service';
   selector: 'app-customizer',
   templateUrl: './customizer.html',
   styleUrls: ['./customizer.scss'],
-  imports: [CommonModule, QuickOption, ColorPicker],
+  imports: [QuickOption, ColorPicker, NgClass],
 })
 export class Customizer {
   private modalService = inject(NgbModal);

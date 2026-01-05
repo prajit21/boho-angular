@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, OnInit, Output } from '@angular/core';
 
 import * as Data from '../../../shared/data/data/contacts/all-contact';
@@ -8,7 +8,7 @@ import { Details } from '../details/details';
   selector: 'app-all-contact',
   templateUrl: './all-contact.html',
   styleUrls: ['./all-contact.scss'],
-  imports: [Details, CommonModule],
+  imports: [Details, NgClass],
 })
 export class AllContact implements OnInit {
   public allcontactData = Data.AllcontactData;

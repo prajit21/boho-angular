@@ -1,11 +1,7 @@
 <div class="modal-toggle-wrapper social-profile text-start dark-sign-up">
   <h3 class="py-2 modal-title text-center">Boho SIGN-UP</h3>
   <div class="modal-body">
-    <form
-      class="row g-3 needs-validation custom-input"
-      novalidate
-      [ngClass]="{ 'was-validated': validate }"
-    >
+    <form class="row g-3 needs-validation custom-input" novalidate [class.was-validated]="validate">
       <div class="col-md-6">
         <label class="form-label" for="validationCustom01">First name</label>
         <input

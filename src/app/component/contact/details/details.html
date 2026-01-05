@@ -1,4 +1,4 @@
-<div class="tab-content" id="v-pills-tabContent" [ngStyle]="{ display: editContact ? 'none' : '' }">
+<div class="tab-content" id="v-pills-tabContent" [style.display]="editContact ? 'none' : ''">
   <div
     class="tab-pane contact-tab-0 tab-content-child fade show active"
     id="v-pills-user"
@@ -68,15 +68,15 @@
     </div>
   </div>
 </div>
-<div class="contact-editform ps-0" [ngStyle]="{ display: !editContact ? 'none' : '' }">
+<div class="contact-editform ps-0" [style.display]="!editContact ? 'none' : ''">
   <form>
     <div class="row g-2">
       <app-general [selectedData]="selectedData" />
     </div>
-    <div class="row g-2 more-data" [ngStyle]="{ display: !editMoreDetails ? 'none' : '' }">
+    <div class="row g-2 more-data" [style.display]="!editMoreDetails ? 'none' : ''">
       <app-personal-details />
     </div>
-    <div class="mb-3 col-md-12" [ngStyle]="{ display: !editMoreDetails ? 'none' : '' }">
+    <div class="mb-3 col-md-12" [style.display]="!editMoreDetails ? 'none' : ''">
       <app-address-details />
     </div>
     <a

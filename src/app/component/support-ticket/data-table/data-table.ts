@@ -1,4 +1,4 @@
-import { AsyncPipe, CommonModule, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgClass } from '@angular/common';
 import { Component, inject, viewChildren } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -16,7 +16,15 @@ import { SupportTicketService } from '../../../shared/services/support-ticket/su
   selector: 'app-data-table',
   templateUrl: './data-table.html',
   styleUrls: ['./data-table.scss'],
-  imports: [FormsModule, NgbdSortableHeader2Directive, NgbPagination, AsyncPipe, CommonModule],
+  imports: [
+    FormsModule,
+    NgbdSortableHeader2Directive,
+    NgbPagination,
+    AsyncPipe,
+    AsyncPipe,
+    DecimalPipe,
+    NgClass,
+  ],
   providers: [DecimalPipe, SupportTicketService],
 })
 export class DataTable {

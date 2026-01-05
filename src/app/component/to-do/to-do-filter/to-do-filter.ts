@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { FeatherIcons } from '../../../shared/component/feather-icons/feather-icons';
@@ -8,7 +7,7 @@ import { ClickOutsideDirective } from '../../../shared/directive/outside.directi
   selector: 'app-to-do-filter',
   templateUrl: './to-do-filter.html',
   styleUrls: ['./to-do-filter.scss'],
-  imports: [FeatherIcons, CommonModule, ClickOutsideDirective],
+  imports: [FeatherIcons, ClickOutsideDirective],
 })
 export class ToDoFilter {
   public isOpen: boolean = false;

@@ -1,4 +1,4 @@
-import { CommonModule, UpperCasePipe } from '@angular/common';
+import { UpperCasePipe, NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
@@ -9,7 +9,7 @@ import * as Data from '../../../shared/data/data/icons/flag-icon';
   selector: 'app-flag-icon',
   templateUrl: './flag-icon.html',
   styleUrls: ['./flag-icon.scss'],
-  imports: [UpperCasePipe, CommonModule],
+  imports: [UpperCasePipe, NgClass, UpperCasePipe],
 })
 export class FlagIcon {
   toastrService = inject(ToastrService);

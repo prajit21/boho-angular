@@ -1,6 +1,6 @@
 <div
   [ngClass]="navService.isDisplay ? 'page-header close_icon' : 'page-header'"
-  [ngStyle]="{ display: hidenav.show ? 'none' : 'block' }"
+  [style.display]="hidenav.show ? 'none' : 'block'"
 >
   <div class="header-wrapper row m-0">
     <div class="header-logo-wrapper col-auto p-0">

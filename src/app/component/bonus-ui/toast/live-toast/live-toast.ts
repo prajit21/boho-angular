@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
   selector: 'app-live-toast',
   templateUrl: './live-toast.html',
   styleUrls: ['./live-toast.scss'],
-  imports: [CommonModule],
+  imports: [NgClass],
 })
 export class LiveToast {
   private toastr = inject(ToastrService);

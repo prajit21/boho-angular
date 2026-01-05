@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, output } from '@angular/core';
 
 import { chatData } from '../../../../shared/data/data/chat/chat';
@@ -7,7 +7,7 @@ import { chatData } from '../../../../shared/data/data/chat/chat';
   selector: 'app-users-chat',
   templateUrl: './users-chat.html',
   styleUrls: ['./users-chat.scss'],
-  imports: [CommonModule],
+  imports: [NgClass],
 })
 export class UsersChat {
   public chatData = chatData;

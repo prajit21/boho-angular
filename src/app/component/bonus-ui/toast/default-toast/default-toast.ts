@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-default-toast',
   templateUrl: './default-toast.html',
   styleUrls: ['./default-toast.scss'],
-  imports: [CommonModule],
+  imports: [NgClass],
 })
 export class DefaultToast {
   public isShow: boolean = true;

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, OnInit, SimpleChanges, input } from '@angular/core';
 
 import { FeatherIcons } from '../../../shared/component/feather-icons/feather-icons';
@@ -9,7 +9,7 @@ import { Tasklist } from '../../../shared/data/data/tasks/task-list';
   selector: 'app-all-tasks',
   templateUrl: './all-tasks.html',
   styleUrls: ['./all-tasks.scss'],
-  imports: [FeatherIcons, CommonModule],
+  imports: [FeatherIcons, NgClass],
 })
 export class AllTasks implements OnInit {
   public taskData = data.TaskData;

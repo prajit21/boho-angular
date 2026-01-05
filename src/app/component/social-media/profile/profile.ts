@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { About } from '../about/about';
@@ -10,7 +10,7 @@ import { TimeLine } from '../time-line/time-line';
   selector: 'app-profile',
   templateUrl: './profile.html',
   styleUrls: ['./profile.scss'],
-  imports: [TimeLine, About, Friends, Photos, CommonModule],
+  imports: [TimeLine, About, Friends, Photos, NgClass],
 })
 export class Profile {
   active = 1;

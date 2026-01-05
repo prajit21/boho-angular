@@ -1,4 +1,4 @@
-<div class="customizer-links" [ngClass]="{ open: layoutService.customizer !== '' }">
+<div class="customizer-links" [class.open]="layoutService.customizer !== ''">
   <div
     class="nav flex-column nac-pills"
     id="c-pills-tab"
@@ -8,7 +8,7 @@
     <a
       href="javascript:void(0)"
       class="nav-link"
-      [ngClass]="{ active: layoutService.customizer === 'layout' }"
+      [class.active]="layoutService.customizer === 'layout'"
       id="c-pills-home-tab"
       (click)="Customizer('layout')"
     >
@@ -18,7 +18,7 @@
     <a
       href="javascript:void(0)"
       class="nav-link"
-      [ngClass]="{ active: layoutService.customizer === 'colorPicker' }"
+      [class.active]="layoutService.customizer === 'colorPicker'"
       id="c-pills-home-tab"
       (click)="Customizer('colorPicker')"
     >
@@ -27,7 +27,7 @@
     </a>
   </div>
 </div>
-<div class="customizer-contain" [ngClass]="{ open: layoutService.customizer !== '' }">
+<div class="customizer-contain" [class.open]="layoutService.customizer !== ''">
   <div class="tab-content" id="c-pills-tabContent">
     <div class="customizer-header">
       <i class="icofont-close icon-close" (click)="Customizer('')"></i>

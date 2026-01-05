@@ -1,4 +1,4 @@
-import { CommonModule, SlicePipe } from '@angular/common';
+import { SlicePipe, NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -22,7 +22,6 @@ import { ThemeMode } from './theme-mode/theme-mode';
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
   imports: [
-    CommonModule,
     RouterLink,
     FormsModule,
     Search,
@@ -31,10 +30,11 @@ import { ThemeMode } from './theme-mode/theme-mode';
     Bookmark,
     Message,
     Cart,
-    CommonModule,
     Language,
     Profile,
     SvgIcon,
+    SlicePipe,
+    NgClass,
     SlicePipe,
   ],
 })

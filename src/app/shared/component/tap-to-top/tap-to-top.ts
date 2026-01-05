@@ -1,11 +1,10 @@
-import { ViewportScroller, CommonModule } from '@angular/common';
+import { ViewportScroller } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 
 @Component({
   selector: 'app-tap-to-top',
   templateUrl: './tap-to-top.html',
   styleUrls: ['./tap-to-top.scss'],
-  imports: [CommonModule],
 })
 export class TapToTop {
   private viewScroller = inject(ViewportScroller);

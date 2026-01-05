@@ -8,7 +8,7 @@
   <div class="card-body">
     <ul class="list-group">
       @for (listData of activeListData; track listData) {
-        <li class="list-group-item bg-warning-light" [ngClass]="{ active: listData.active }">
+        <li class="list-group-item bg-warning-light" [class.active]="listData.active">
           <i class="icofont icofont-arrow-right"> </i>{{ listData.item }}
         </li>
       }

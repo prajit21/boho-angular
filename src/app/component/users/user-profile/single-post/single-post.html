@@ -22,19 +22,19 @@
     <hr />
     <p>{{ data()!.desc }}</p>
     @if (data()!.post_img) {
-    <div class="img-container">
-      <div class="my-gallery" id="aniimated-thumbnials" itemscope="">
-        <figure itemprop="associatedMedia" itemscope="">
-          <a href="{{ data()!.post_img }}" itemprop="contentUrl">
-            <img
-              class="img-fluid rounded"
-              src="{{ data()!.post_img }}"
-              itemprop="thumbnail"
-              alt="gallery"
-          /></a>
-        </figure>
+      <div class="img-container">
+        <div class="my-gallery" id="aniimated-thumbnials" itemscope="">
+          <figure itemprop="associatedMedia" itemscope="">
+            <a href="{{ data()!.post_img }}" itemprop="contentUrl">
+              <img
+                class="img-fluid rounded"
+                src="{{ data()!.post_img }}"
+                itemprop="thumbnail"
+                alt="gallery"
+            /></a>
+          </figure>
+        </div>
       </div>
-    </div>
     }
     <div class="like-comment" style="margin-top: 30px">
       <ul class="list-inline">

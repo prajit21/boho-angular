@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -9,7 +8,7 @@ import { ClickOutsideDirective } from '../../../../shared/directive/outside.dire
   selector: 'app-transaction-history',
   templateUrl: './transaction-history.html',
   styleUrls: ['./transaction-history.scss'],
-  imports: [RouterLink, CommonModule, ClickOutsideDirective],
+  imports: [RouterLink, ClickOutsideDirective],
 })
 export class TransactionHistory {
   public transactionData = transactionhistory.TracsactionHistory;

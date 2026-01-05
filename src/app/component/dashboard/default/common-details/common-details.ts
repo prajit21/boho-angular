@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 
 import { FeatherIcons } from '../../../../shared/component/feather-icons/feather-icons';
@@ -9,7 +8,7 @@ import { ClickOutsideDirective } from '../../../../shared/directive/outside.dire
   selector: 'app-common-details',
   templateUrl: './common-details.html',
   styleUrls: ['./common-details.scss'],
-  imports: [CommonModule, FeatherIcons, ClickOutsideDirective],
+  imports: [FeatherIcons, ClickOutsideDirective],
 })
 export class CommonDetails {
   readonly data = input<commonDetails>();

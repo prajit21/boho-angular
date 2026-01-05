@@ -8,11 +8,11 @@
       <div class="progress-showcase row">
         <div class="col">
           @for (data of allData.data; track data) {
-            <div class="progress" [ngStyle]="{ height: data.height }">
+            <div class="progress" [style.height]="data.height">
               <div
                 class="progress-bar bg-{{ data.colorClass }}"
                 role="progressbar"
-                [ngStyle]="{ width: data.width }"
+                [style.width]="data.width"
               ></div>
             </div>
           }
