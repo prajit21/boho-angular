@@ -7986,6 +7986,52 @@ body {
         background-color: $dark-body-background !important;
       }
     }
+    .angular-editor {
+      .angular-editor-toolbar {
+        .angular-editor-toolbar-set {
+          button {
+            &.angular-editor-button {
+              svg {
+                stroke: #fff9;
+                color: #fff9;
+                fill: #fff9;
+              }
+            }
+          }
+          .select-heading,
+          .select-font,
+          .select-font-size {
+            .ae-picker {
+              button {
+                &.ae-picker-label {
+                  background-color: #626262;
+                  color: #fff9;
+                  &::before {
+                    background: #626262;
+                  }
+                }
+              }
+              .ae-picker-options {
+                span {
+                  color: #fff9;
+                  &:hover {
+                    background-color: #626262;
+                  }
+                }
+                .ae-picker-item {
+                  &.focused {
+                    background-color: #626262;
+                  }
+                }
+              }
+            }
+            &:hover {
+              background: unset;
+            }
+          }
+        }
+      }
+    }
   }
 
   &.dark-sidebar {
