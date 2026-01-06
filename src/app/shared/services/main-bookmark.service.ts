@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import { Observable, map } from 'rxjs';
 
@@ -10,8 +10,7 @@ import { Allbookmark } from '../data/data/main-bookmark/all-bookmark';
 })
 export class MainBookmarkService {
   bookmarkData: Allbookmark[];
-
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   bookmark(): Observable<Allbookmark[]> {
     return this.http.get<Allbookmark[]>('shared/data/data/main-bookmark/all-bookmark').pipe(

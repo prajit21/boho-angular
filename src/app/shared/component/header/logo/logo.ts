@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -9,14 +9,11 @@ import { VerticalNavService } from '../../../../shared/services/vertical-nav.ser
   selector: 'app-logo',
   templateUrl: './logo.html',
   styleUrls: ['./logo.scss'],
-  imports: [],
   imports: [RouterLink, FormsModule],
 })
 export class Logo {
-  constructor(
-    public navService: VerticalNavService,
-    public navServices: NavService,
-  ) {}
+  readonly navService = inject(VerticalNavService);
+  readonly navServices = inject(NavService);
 
   openMenu() {
     this.navService.isDisplay = !this.navService.isDisplay;
